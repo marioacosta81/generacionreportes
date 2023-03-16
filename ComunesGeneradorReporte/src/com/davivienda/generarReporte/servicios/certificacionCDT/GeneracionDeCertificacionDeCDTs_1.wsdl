@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://www.davivienda.com/xml/GeneracionDeCertificacionDeCDTs" xmlns:ns0="http://www.davivienda.com/xml/GeneracionDeCertificacionDeCDTs" xmlns:wsp200607="http://www.w3.org/2006/07/ws-policy" xmlns:wsp200409="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soap11="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:schema>
+      <xsd:import schemaLocation="GeneracionDeCertificacionDeCDTs.xsd1.xsd" namespace="http://www.davivienda.com/xml/GeneracionDeCertificacionDeCDTs"/>
+      <xsd:import schemaLocation="GeneracionDeCertificacionDeCDTs.xsd2.xsd" namespace="http://www.davivienda.com/xml/GeneracionDeCertificacionDeCDTs"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="GeneracionDeCertificacionDeCDTs_in">
+    <wsdl:part name="GeneracionDeCertificacionDeCDTs" element="xsns:GeneracionDeCertificacionDeCDTs" xmlns:xsns="http://www.davivienda.com/xml/GeneracionDeCertificacionDeCDTs"/>
+  </wsdl:message>
+  <wsdl:message name="GeneracionDeCertificacionDeCDTs_out">
+    <wsdl:part name="GeneracionDeCertificacionDeCDTsResponse" element="xsns:GeneracionDeCertificacionDeCDTsResponse" xmlns:xsns="http://www.davivienda.com/xml/GeneracionDeCertificacionDeCDTs"/>
+  </wsdl:message>
+  <wsdl:portType name="GeneracionDeCertificacionDeCDTsPortType">
+    <wsdl:operation name="GeneracionDeCertificacionDeCDTs">
+      <wsdl:input name="GeneracionDeCertificacionDeCDTs_Input" message="ns0:GeneracionDeCertificacionDeCDTs_in"/>
+      <wsdl:output name="GeneracionDeCertificacionDeCDTs_Output" message="ns0:GeneracionDeCertificacionDeCDTs_out"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="GeneracionDeCertificacionDeCDTs_HTTP_Binding" type="ns0:GeneracionDeCertificacionDeCDTsPortType">
+    <soap11:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="GeneracionDeCertificacionDeCDTs">
+      <soap11:operation soapAction="" style="document"/>
+      <wsdl:input name="GeneracionDeCertificacionDeCDTs_Input">
+        <soap11:body parts="GeneracionDeCertificacionDeCDTs" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="GeneracionDeCertificacionDeCDTs_Output">
+        <soap11:body parts="GeneracionDeCertificacionDeCDTsResponse" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="GeneracionDeCertificacionDeCDTs_HTTP_Service">
+    <wsdl:port name="GeneracionDeCertificacionDeCDTs_HTTP_Port" binding="ns0:GeneracionDeCertificacionDeCDTs_HTTP_Binding">
+      <soap11:address location="http://90.4.28.5:80/ESBService/GeneracionDeCertificacionDeCDTs"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

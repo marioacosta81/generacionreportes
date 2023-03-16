@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2.6hudson-86  svn-revision#12773.--><xsd:schema targetNamespace="http://www.davivienda.com/Esquemas/Framework/ContextoRespuestaTipo/v1" elementFormDefault="qualified" xmlns:ns2="http://www.davivienda.com/Esquemas/Framework/ErrorTipo/v1" xmlns:ns1="http://www.davivienda.com/Esquemas/Framework/ResultadoTransaccionTipo/v1" xmlns:ns3="http://www.davivienda.com/Esquemas/Framework/PaginacionTipo/v1" xmlns:ns0="http://www.davivienda.com/Esquemas/Framework/ContextoRespuestaTipo/v1" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:import schemaLocation="v1_1_2_3_4_5_6_7_8_9_10_11_12_13_14_15_16_17_18_19_20.xsd" namespace="http://www.davivienda.com/Esquemas/Framework/ResultadoTransaccionTipo/v1"/>
+  <xsd:import schemaLocation="v1_1_2_3_4_5_6_7_8_9_10_11_12_13_14_15_16_17_18_19_20_21.xsd" namespace="http://www.davivienda.com/Esquemas/Framework/ErrorTipo/v1"/>
+  <xsd:import schemaLocation="v1_1_2_3_4_5_6_7_8_9_10.xsd" namespace="http://www.davivienda.com/Esquemas/Framework/PaginacionTipo/v1"/>
+  <xsd:complexType name="ContextoRespuestaTipo">
+    <xsd:sequence>
+      <xsd:element name="resultadoTransaccion" type="ns1:ResultadoTransaccionTipo"/>
+      <xsd:element name="error" type="ns2:ErrorTipo" minOccurs="0"/>
+      <xsd:element name="paginacion" type="ns3:PaginacionTipo" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="http://www.davivienda.com/GenerarReporte/SrvScnGeneracionReporte/v1"
+	elementFormDefault="qualified"
+	xmlns:ns6="http://www.davivienda.com/Esquemas/Framework/ProductoTipo/v1"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns0="http://www.davivienda.com/GenerarReporte/SrvScnGeneracionReporte/v1"
+	xmlns:ns1="http://www.davivienda.com/Esquemas/Framework/ContextoSolicitudTipo/v1"
+	xmlns:ns2="http://www.davivienda.com/Esquemas/Framework/ContextoRespuestaTipo/v1"
+	xmlns:ns7="http://www.davivienda.com/Esquemas/GenerarReporte/SolicitudCertificadoTipo/v1"
+	xmlns:ns3="http://www.davivienda.com/Esquemas/GenerarReporte/RespuestaCertificadoTipo/v1">
+
+	<xsd:import schemaLocation="ContextoSolicitudTipo.xsd" namespace="http://www.davivienda.com/Esquemas/Framework/ContextoSolicitudTipo/v1" />
+	<xsd:import schemaLocation="ContextoRespuestaTipo.xsd" namespace="http://www.davivienda.com/Esquemas/Framework/ContextoRespuestaTipo/v1" />
+	<xsd:import schemaLocation="RespuestaCertificadoTipo.xsd" namespace="http://www.davivienda.com/Esquemas/GenerarReporte/RespuestaCertificadoTipo/v1" />
+	<!-- GeneracionReporte -->
+	<xsd:complexType name="MsjSolOpGeneracionReporte">
+		<xsd:sequence>
+			<xsd:element name="contextoSolicitud"
+				type="ns1:ContextoSolicitudTipo" maxOccurs="1" minOccurs="1" />
+			<xsd:element name="reporte" type="ns0:ReporteType"
+				minOccurs="1" maxOccurs="1">
+			</xsd:element>
+			<xsd:element name="cliente" type="ns0:ClienteType"
+				maxOccurs="1" minOccurs="1">
+			</xsd:element>
+			<xsd:element name="producto" type="ns0:ProductoType" maxOccurs="1" minOccurs="1"></xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="MsjRespOpGeneracionReporte">
+		<xsd:sequence>
+			<xsd:element name="contextoRespuesta" type="ns2:ContextoRespuestaTipo" />
+			<xsd:element name="respuestaCertificado" type="ns3:RespuestaCertificadoTipo" />
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	<!-- GeneracionReporte -->
+	<xsd:element name="msjSolOpGeneracionReporte" type="ns0:MsjSolOpGeneracionReporte" />
+	<xsd:element name="msjRespOpGeneracionReporte" type="ns0:MsjRespOpGeneracionReporte" />
+
+	<xsd:complexType name="ReporteType">
+		<xsd:sequence>
+			<xsd:element name="tipoCertificacion" type="xsd:string" maxOccurs="1" minOccurs="1"></xsd:element>
+			<xsd:element name="ciudadEmision" type="xsd:string" maxOccurs="1" minOccurs="1"></xsd:element>
+			<xsd:element name="tituloPersonal" type="xsd:string" maxOccurs="1" minOccurs="1"></xsd:element>
+			<xsd:element name="dirigidoA" type="xsd:string" maxOccurs="1" minOccurs="1"></xsd:element>
+			<xsd:element name="formato" type="xsd:string" maxOccurs="1" minOccurs="1"></xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="ClienteType">
+		<xsd:sequence>
+			<xsd:element name="nombres" type="xsd:string" maxOccurs="1" minOccurs="1"></xsd:element>
+			<xsd:element name="primerApellido" type="xsd:string" maxOccurs="1" minOccurs="1"></xsd:element>
+			<xsd:element name="segundoApellido" type="xsd:string" maxOccurs="1" minOccurs="0"></xsd:element>
+			<xsd:element name="tipoIdentificacion" type="xsd:int" maxOccurs="1" minOccurs="1"></xsd:element>
+			<xsd:element name="numeroIdentificacion"
+				type="xsd:string" maxOccurs="1" minOccurs="1">
+			</xsd:element>
+			<xsd:element name="ciudadExpedicionDocumento" type="xsd:string" maxOccurs="1" minOccurs="0"></xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="ProductoType">
+		<xsd:sequence>
+			<xsd:element name="codigoTipoProducto" type="xsd:string" maxOccurs="1" minOccurs="1"></xsd:element>
+			<xsd:element name="codigoSubProducto" type="xsd:string" maxOccurs="1" minOccurs="1"></xsd:element>
+			<xsd:element name="numeroProducto" type="xsd:string" maxOccurs="1" minOccurs="1"></xsd:element>
+			<xsd:element name="fechaApertura" type="xsd:date" maxOccurs="1" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

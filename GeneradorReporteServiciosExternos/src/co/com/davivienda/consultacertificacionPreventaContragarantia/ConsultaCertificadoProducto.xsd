@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="http://www.davivienda.com/xml/ConsultaCertificadoProducto" xmlns:con="http://www.davivienda.com/xml/ConsultaCertificadoProducto" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+
+	<!-- Request -->
+	<xsd:element name="ConsultaCertificadoProducto" type="con:ConsultaCertificadoProductoType">
+	</xsd:element>
+
+	<xsd:complexType name="ConsultaCertificadoProductoType">
+		<xsd:sequence>
+			<xsd:element maxOccurs="1" minOccurs="1" name="Request" type="con:ConsultaCertificadoProductoRequestType"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="ConsultaCertificadoProductoRequestType">
+		<xsd:sequence>
+			<xsd:element maxOccurs="1" minOccurs="1" name="DataHeader" type="con:DataHeaderReqType"/>
+			<xsd:element maxOccurs="1" minOccurs="1" name="Data" type="con:DataReqType"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="DataHeaderReqType">
+		<xsd:sequence>
+			<xsd:element maxOccurs="1" minOccurs="1" default="ConsultaCertificadoProducto" name="nombreOperacion" type="xsd:string"/>
+			<xsd:element maxOccurs="1" minOccurs="1" name="total" type="xsd:int"/>
+			<xsd:element maxOccurs="1" minOccurs="1" name="jornada" type="xsd:short"/>
+			<xsd:element maxOccurs="1" minOccurs="1" name="canal" type="xsd:short"/>
+			<xsd:element maxOccurs="1" minOccurs="1" name="modoDeOperacion" type="xsd:short"/>
+			<xsd:element maxOccurs="1" minOccurs="1" name="usuario" type="xsd:string"/>
+			<xsd:element maxOccurs="1" minOccurs="1" name="perfil" type="xsd:short"/>
+			<xsd:element maxOccurs="1" minOccurs="1" default="1.0.0" name="versionServicio" type="xsd:string"/>
+			<xsd:element maxOccurs="1" minOccurs="1" name="idTransaccion" type="xsd:string"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="DataReqType">
+		<xsd:sequence>
+			<xsd:element maxOccurs="1" minOccurs="1" name="valCodigoOficina" type="xsd:string"/>
+			<xsd:element maxOccurs="1" minOccurs="1" name="valTalon" type="xsd:string"/>
+			<xsd:element maxOccurs="1" minOccurs="1" name="fecCertificacion" type="xsd:date"/>
+			<xsd:element maxOccurs="1" minOccurs="1" name="valNumeroProducto" type="xsd:string"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<!-- Response -->
+	<xsd:element name="ConsultaCertificadoProductoResponse" type="con:ConsultaCertificadoProductoResType">
+	</xsd:element>
+
+	<xsd:complexType name="ConsultaCertificadoProductoResType">
+		<xsd:sequence>
+			<xsd:element maxOccurs="1" minOccurs="1" name="Response" type="con:ConsultaCertificadoProductoResponseType"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="ConsultaCertificadoProductoResponseType">
+		<xsd:sequence>
+			<xsd:element maxOccurs="1" minOccurs="1" name="DataHeader" type="con:DataHeaderResType"/>
+			<xsd:element maxOccurs="1" minOccurs="0" name="Data" type="con:DataResType"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="DataHeaderResType">
+		<xsd:sequence>
+			<xsd:element maxOccurs="1" minOccurs="1" default="ConsultaCertificadoProducto" name="nombreOperacion" type="xsd:string"/>
+			<xsd:element maxOccurs="1" minOccurs="1" name="total" type="xsd:int"/>
+			<xsd:element maxOccurs="1" minOccurs="1" name="caracterAceptacion" type="xsd:string"/>
+			<xsd:element maxOccurs="1" minOccurs="1" name="ultimoMensaje" type="xsd:short"/>
+			<xsd:element maxOccurs="1" minOccurs="1" name="idTransaccion" type="xsd:string"/>
+			<xsd:element maxOccurs="1" minOccurs="1" name="codMsgRespuesta" type="xsd:short"/>
+			<xsd:element maxOccurs="1" minOccurs="0" name="msgRespuesta" type="xsd:string"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="DataResType">
+		<xsd:sequence>
+			<xsd:element maxOccurs="1" minOccurs="1" name="valNitFiduciaria" type="xsd:string"/>
+			<xsd:element maxOccurs="1" minOccurs="1" name="valNombreFiduciaria" type="xsd:string"/>
+			<xsd:element maxOccurs="1" minOccurs="1" name="codTipoIdentificacion" type="xsd:string"/>
+			<xsd:element maxOccurs="1" minOccurs="1" name="valTipoIdentificacionLetras" type="xsd:string"/>
+			<xsd:element maxOccurs="1" minOccurs="1" name="valIdentificacionCliente" type="xsd:string"/>
+			<xsd:element maxOccurs="1" minOccurs="1" name="valNombreCliente" type="xsd:string"/>
+			<xsd:element maxOccurs="1" minOccurs="1" name="valNombreProducto" type="xsd:string"/>
+			<xsd:element maxOccurs="1" minOccurs="1" name="codObjetivoProducto" type="xsd:string"/>
+			<xsd:element maxOccurs="1" minOccurs="1" name="valNombreObjetivo" type="xsd:string"/>
+			<xsd:element maxOccurs="1" minOccurs="1" name="fecApertura" type="xsd:string"/>
+			<xsd:element maxOccurs="1" minOccurs="0" name="valNitCompania2" type="xsd:string"/>
+			<xsd:element maxOccurs="1" minOccurs="0" name="valNombreCompania2" type="xsd:string"/>
+			<xsd:element maxOccurs="1" minOccurs="0" name="codProyecto" type="xsd:string"/>
+			<xsd:element maxOccurs="1" minOccurs="0" name="valNombreCodigoProyecto" type="xsd:string"/>
+			<xsd:element maxOccurs="1" minOccurs="1" name="valFechaCertificacionLetras" type="xsd:string"/>
+			<xsd:element maxOccurs="1" minOccurs="0" name="valDatoInformativoCuenta1" type="xsd:string"/>
+			<xsd:element maxOccurs="1" minOccurs="0" name="valDatoInformativoCuenta2" type="xsd:string"/>
+			<xsd:element maxOccurs="1" minOccurs="0" name="valSaldoTotal" type="xsd:string"/>
+			<xsd:element maxOccurs="1" minOccurs="0" name="valSaldoAportes" type="xsd:string"/>
+			<xsd:element maxOccurs="1" minOccurs="0" name="valRendimientos" type="xsd:string"/>
+			<xsd:element maxOccurs="1" minOccurs="0" name="valSaldoCuenta1" type="xsd:string"/>
+			<xsd:element maxOccurs="1" minOccurs="0" name="valSaldoCuenta2" type="xsd:string"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+</xsd:schema>

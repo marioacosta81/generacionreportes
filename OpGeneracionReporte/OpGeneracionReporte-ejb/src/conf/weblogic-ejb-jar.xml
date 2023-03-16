@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<weblogic-ejb-jar xmlns="http://xmlns.oracle.com/weblogic/weblogic-ejb-jar" 
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+                  xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/ejb-jar_3_0.xsd http://xmlns.oracle.com/weblogic/weblogic-ejb-jar http://xmlns.oracle.com/weblogic/weblogic-ejb-jar/1.0/weblogic-ejb-jar.xsd">
+    <weblogic-enterprise-bean>
+        <ejb-name>OpGeneracionReporte</ejb-name>
+        <stateless-session-descriptor>
+            <pool>
+                <max-beans-in-free-pool>80</max-beans-in-free-pool>
+                <initial-beans-in-free-pool>5</initial-beans-in-free-pool>
+                <idle-timeout-seconds>180</idle-timeout-seconds>
+            </pool>
+        </stateless-session-descriptor>
+        <transaction-descriptor>
+            <trans-timeout-seconds>30</trans-timeout-seconds>
+        </transaction-descriptor>
+          <enable-call-by-reference>true</enable-call-by-reference>   
+    </weblogic-enterprise-bean>
+</weblogic-ejb-jar>

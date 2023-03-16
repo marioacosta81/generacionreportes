@@ -1,0 +1,3 @@
+<xsd:schema targetNamespace="http://www.davivienda.com/xml/LibranzaVirtual" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.davivienda.com/xml/LibranzaVirtual" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:mrm="http://www.davivienda.com/xml/LibranzaVirtual">
+   <xsd:include schemaLocation="LibranzaVirtual.xsd2.xsd"/>
+</xsd:schema>

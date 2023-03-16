@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://www.davivienda.com/xml/ConsultaRentabilidades" xmlns:ns0="http://www.davivienda.com/xml/ConsultaRentabilidades" xmlns:wsp200607="http://www.w3.org/2006/07/ws-policy" xmlns:wsp200409="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soap11="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+<wsdl:types xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<xsd:schema>
+<xsd:import schemaLocation="ConsultaRentabilidades.xsd2.xsd" namespace="http://www.davivienda.com/xml/ConsultaRentabilidades"/></xsd:schema></wsdl:types>
+<wsdl:message name="ConsultaRentabilidades_Input">
+<wsdl:part name="ConsultaRentabilidades" element="xsns:ConsultaRentabilidades" xmlns:xsns="http://www.davivienda.com/xml/ConsultaRentabilidades"/></wsdl:message>
+<wsdl:message name="ConsultaRentabilidades_Output">
+<wsdl:part name="ConsultaRentabilidadesResponse" element="xsns:ConsultaRentabilidadesResponse" xmlns:xsns="http://www.davivienda.com/xml/ConsultaRentabilidades"/></wsdl:message>
+<wsdl:portType name="ConsultaRentabilidadesPortType">
+<wsdl:operation name="ConsultaRentabilidades">
+<wsdl:input name="ConsultaRentabilidades_Input" message="ns0:ConsultaRentabilidades_Input"/>
+<wsdl:output name="ConsultaRentabilidades_Output" message="ns0:ConsultaRentabilidades_Output"/></wsdl:operation></wsdl:portType>
+<wsdl:binding name="ConsultaRentabilidadesSOAP_HTTP_Binding" type="ns0:ConsultaRentabilidadesPortType">
+<soap11:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+<wsdl:operation name="ConsultaRentabilidades">
+<soap11:operation soapAction="http://www.davivienda.com/xml/ConsultaRentabilidades/ConsultaRentabilidades" style="document"/>
+<wsdl:input name="ConsultaRentabilidades_Input">
+<soap11:body parts="ConsultaRentabilidades" use="literal"/></wsdl:input>
+<wsdl:output name="ConsultaRentabilidades_Output">
+<soap11:body parts="ConsultaRentabilidadesResponse" use="literal"/></wsdl:output></wsdl:operation></wsdl:binding>
+<wsdl:service name="ConsultaRentabilidades_HTTP_Service">
+<wsdl:port name="ConsultaRentabilidadesSOAP_HTTP_Port" binding="ns0:ConsultaRentabilidadesSOAP_HTTP_Binding">
+<soap11:address location="http://90.3.1.61:80/ESBService/ConsultaRentabilidades"/></wsdl:port></wsdl:service></wsdl:definitions>

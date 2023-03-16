@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://www.davivienda.com/xml/ConsultasProductos" xmlns:ns0="http://www.davivienda.com/xml/ConsultasProductos" xmlns:wsp200607="http://www.w3.org/2006/07/ws-policy" xmlns:wsp200409="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soap11="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:schema>
+      <xsd:import schemaLocation="ConsultasProductos.xsd2.xsd" namespace="http://www.davivienda.com/xml/ConsultasProductos"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ConsultasProductos_Input">
+    <wsdl:part name="ConsultasProductos" element="xsns:ConsultasProductos" xmlns:xsns="http://www.davivienda.com/xml/ConsultasProductos"/>
+  </wsdl:message>
+  <wsdl:message name="ConsultasProductos_Output">
+    <wsdl:part name="ConsultasProductosResponse" element="xsns:ConsultasProductosResponse" xmlns:xsns="http://www.davivienda.com/xml/ConsultasProductos"/>
+  </wsdl:message>
+  <wsdl:portType name="ConsultasProductosPortType">
+    <wsdl:operation name="ConsultasProductos">
+      <wsdl:input name="ConsultasProductos_Input" message="ns0:ConsultasProductos_Input"/>
+      <wsdl:output name="ConsultasProductos_Output" message="ns0:ConsultasProductos_Output"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ConsultasProductosSOAP_HTTP_Binding" type="ns0:ConsultasProductosPortType">
+    <soap11:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="ConsultasProductos">
+      <soap11:operation soapAction="http://www.davivienda.com/xml/ConsultasProductos" style="document"/>
+      <wsdl:input name="ConsultasProductos_Input">
+        <soap11:body parts="ConsultasProductos" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="ConsultasProductos_Output">
+        <soap11:body parts="ConsultasProductosResponse" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ConsultasProductos_HTTP_Service">
+    <wsdl:port name="ConsultasProductosSOAP_HTTP_Port" binding="ns0:ConsultasProductosSOAP_HTTP_Binding">
+      <soap11:address location="http://90.4.5.95:80/ESBService/ConsultasProductos"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

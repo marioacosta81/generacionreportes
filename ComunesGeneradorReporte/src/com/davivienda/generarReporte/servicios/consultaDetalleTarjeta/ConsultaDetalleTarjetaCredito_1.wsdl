@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://www.davivienda.com/xml/ConsultaDetalleTarjetaCredito" xmlns:ns0="http://www.davivienda.com/xml/ConsultaDetalleTarjetaCredito" xmlns:wsp200607="http://www.w3.org/2006/07/ws-policy" xmlns:wsp200409="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soap11="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:schema>
+      <xsd:import schemaLocation="ConsultaDetalleTarjetaCredito.xsd1.xsd" namespace="http://www.davivienda.com/xml/ConsultaDetalleTarjetaCredito"/>
+      <xsd:import schemaLocation="ConsultaDetalleTarjetaCredito.xsd2.xsd" namespace="http://www.davivienda.com/xml/ConsultaDetalleTarjetaCredito"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ConsultaDetalleTarjetaCredito_in">
+    <wsdl:part name="ConsultaDetalleTarjetaCredito" element="xsns:ConsultaDetalleTarjetaCredito" xmlns:xsns="http://www.davivienda.com/xml/ConsultaDetalleTarjetaCredito"/>
+  </wsdl:message>
+  <wsdl:message name="ConsultaDetalleTarjetaCredito_out">
+    <wsdl:part name="ConsultaDetalleTarjetaCreditoResponse" element="xsns:ConsultaDetalleTarjetaCreditoResponse" xmlns:xsns="http://www.davivienda.com/xml/ConsultaDetalleTarjetaCredito"/>
+  </wsdl:message>
+  <wsdl:portType name="ConsultaDetalleTarjetaCreditoPortType">
+    <wsdl:operation name="ConsultaDetalleTarjetaCredito">
+      <wsdl:input name="ConsultaDetalleTarjetaCredito_Input" message="ns0:ConsultaDetalleTarjetaCredito_in"/>
+      <wsdl:output name="ConsultaDetalleTarjetaCredito_Output" message="ns0:ConsultaDetalleTarjetaCredito_out"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ConsultaDetalleTarjetaCredito_HTTP_Binding" type="ns0:ConsultaDetalleTarjetaCreditoPortType">
+    <soap11:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="ConsultaDetalleTarjetaCredito">
+      <soap11:operation soapAction="" style="document"/>
+      <wsdl:input name="ConsultaDetalleTarjetaCredito_Input">
+        <soap11:body parts="ConsultaDetalleTarjetaCredito" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="ConsultaDetalleTarjetaCredito_Output">
+        <soap11:body parts="ConsultaDetalleTarjetaCreditoResponse" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ConsultaDetalleTarjetaCredito_HTTP_Service">
+    <wsdl:port name="ConsultaDetalleTarjetaCredito_HTTP_Port" binding="ns0:ConsultaDetalleTarjetaCredito_HTTP_Binding">
+      <soap11:address location="http://90.4.28.5:80/ESBService/ConsultaDetalleTarjetaCredito"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

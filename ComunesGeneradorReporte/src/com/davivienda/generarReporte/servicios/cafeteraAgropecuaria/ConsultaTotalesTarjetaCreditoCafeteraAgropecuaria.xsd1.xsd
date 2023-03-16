@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="http://www.davivienda.com/xml/ConsultaTotalesTarjetaCreditoCafeteraAgropecuaria" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.davivienda.com/xml/ConsultaTotalesTarjetaCreditoCafeteraAgropecuaria" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:mrm="http://www.davivienda.com/xml/ConsultaTotalesTarjetaCreditoCafeteraAgropecuaria">
+  <xsd:complexType name="DataHeaderType">
+    <xsd:sequence>
+      <xsd:element name="nombreOperacion" type="xsd:string"/>
+      <xsd:element name="total" type="xsd:int"/>
+      <xsd:element name="jornada" type="xsd:short"/>
+      <xsd:element name="canal" type="xsd:short"/>
+      <xsd:element name="modoDeOperacion" type="xsd:short"/>
+      <xsd:element name="usuario" type="xsd:string"/>
+      <xsd:element name="perfil" type="xsd:short"/>
+      <xsd:element name="versionServicio" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="DataType">
+    <xsd:sequence>
+      <xsd:element name="nroTarjeta" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="RequestType">
+    <xsd:sequence>
+      <xsd:element name="DataHeader" type="mrm:DataHeaderType"/>
+      <xsd:element name="Data" type="mrm:DataType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ConsTotTCCafAgrRequestType">
+    <xsd:sequence>
+      <xsd:element name="Request" type="mrm:RequestType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="ConsTotTCCafAgrRequest" type="mrm:ConsTotTCCafAgrRequestType"/>
+  <xsd:complexType name="DataHeaderRespType">
+    <xsd:sequence>
+      <xsd:element name="nombreOperacion" type="xsd:string"/>
+      <xsd:element name="total" type="xsd:int"/>
+      <xsd:element name="caracterAceptacion" type="xsd:string"/>
+      <xsd:element name="ultimoMensaje" type="xsd:short"/>
+      <xsd:element name="codMsgRespuesta" type="xsd:short"/>
+      <xsd:element minOccurs="0" name="msgRespuesta" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="DataRespType">
+    <xsd:sequence>
+      <xsd:element name="cupoDisponible" type="xsd:decimal"/>
+      <xsd:element name="disponibleAvance" type="xsd:decimal"/>
+      <xsd:element name="pagTotCarteraEnPesos" type="xsd:decimal"/>
+      <xsd:element name="pagMinCarteraEnPesos" type="xsd:decimal"/>
+      <xsd:element name="fechaPagoMinimo" type="xsd:string"/>
+      <xsd:element name="diasDeMora" type="xsd:short"/>
+      <xsd:element name="pagTotCartUSDEnPesos" type="xsd:decimal"/>
+      <xsd:element name="pagMinCartUSDEnPesos" type="xsd:decimal"/>
+      <xsd:element name="pagTotCartUSDEnUSD" type="xsd:decimal"/>
+      <xsd:element name="pagMinCartUSDEnUSD" type="xsd:decimal"/>
+      <xsd:element name="davipuntos" type="xsd:int"/>
+      <xsd:element name="indicadorDeCartera" type="xsd:short"/>
+      <xsd:element name="compania" type="xsd:short"/>
+      <xsd:element name="estado" type="xsd:long"/>
+      <xsd:element name="fechaDeCorte" type="xsd:string"/>
+      <xsd:element name="suproducto" type="xsd:short"/>
+      <xsd:element name="codConvenioLibranza" type="xsd:string"/>
+      <xsd:element name="NITEmpresaDeLibranza" type="xsd:long"/>
+      <xsd:element name="nombEmpresaDeLibranza" type="xsd:string"/>
+      <xsd:element name="valrsPagPorAnticipado" type="xsd:decimal"/>
+      <xsd:element name="davipuntosProxAVencer" type="xsd:int"/>
+      <xsd:element name="fechaVencimientoPuntos" type="xsd:string"/>
+      <xsd:element name="fechaVencimientoCupo" type="xsd:string"/>
+      <xsd:element name="franquicia" type="xsd:short"/>
+      <xsd:element name="fechaVencPlastico" type="xsd:string"/>
+      <xsd:element name="valorEnMora" type="xsd:decimal"/>
+      <xsd:element name="tasaDeCambio" type="xsd:decimal"/>
+      <xsd:element name="frecuenciaInteres" type="xsd:string"/>
+      <xsd:element name="frecuenciaCapital" type="xsd:string"/>
+      <xsd:element name="plazo" type="xsd:short"/>
+      <xsd:element name="fechaProxFactCapital" type="xsd:string"/>
+      <xsd:element name="fechaProxFactInteres" type="xsd:string"/>
+      <xsd:element name="indSistAmortFlexible" type="xsd:short"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ResponseType">
+    <xsd:sequence>
+      <xsd:element name="DataHeader" type="mrm:DataHeaderRespType"/>
+      <xsd:element minOccurs="0" name="Data" type="mrm:DataRespType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ConsTotTCCafAgrResponseType">
+    <xsd:sequence>
+      <xsd:element name="Response" type="mrm:ResponseType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="complexType">
+    <xsd:sequence/>
+  </xsd:complexType>
+  <xsd:element name="ConsTotTCCafAgrResponse" type="mrm:ConsTotTCCafAgrResponseType"/>
+</xsd:schema>

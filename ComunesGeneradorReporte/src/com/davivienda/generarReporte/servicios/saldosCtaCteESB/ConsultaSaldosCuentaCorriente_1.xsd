@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="http://www.davivienda.com/xml/ConsultaSaldosCuentaCorriente" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.davivienda.com/xml/ConsultaSaldosCuentaCorriente" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:mrm="http://www.davivienda.com/xml/ConsultaSaldosCuentaCorriente">
+      
+<xsd:include schemaLocation="ConsultaSaldosCuentaCorriente_37.xsd2.xsd"/>
+    </xsd:schema>

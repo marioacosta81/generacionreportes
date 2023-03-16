@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2.6b02  svn-revision#14033.--><xsd:schema targetNamespace="http://www.davivienda.com/Esquemas/Framework/OperacionCanalTipo/v1" elementFormDefault="qualified" xmlns:ns0="http://www.davivienda.com/Esquemas/Framework/OperacionCanalTipo/v1" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:complexType name="OperacionCanalTipo">
+    <xsd:sequence>
+      <xsd:element name="idSesion" type="xsd:string"/>
+      <xsd:element name="idTransaccion" type="xsd:string"/>
+      <xsd:element name="fecOperacion" type="xsd:dateTime"/>
+      <xsd:element name="valJornada" type="xsd:string"/>
+      <xsd:element name="codMoneda" type="xsd:string"/>
+      <xsd:element name="codPais" type="xsd:string"/>
+      <xsd:element name="codIdioma" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

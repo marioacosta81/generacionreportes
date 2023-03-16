@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="http://www.davivienda.com/xml/ConsultaDeDivisas" xmlns:tns="http://www.davivienda.com/xml/ConsultaDeDivisas" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:complexType name="ConsultaDeDivisasType">
+    <xsd:sequence maxOccurs="1" minOccurs="1">
+      <xsd:element minOccurs="1" name="Request" type="tns:RequestConsultaDeDivisas"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="RequestConsultaDeDivisas">
+    <xsd:sequence maxOccurs="1" minOccurs="1">
+      <xsd:element minOccurs="1" name="DataHeader" type="tns:ConsultaDeDivisasDataHeaderType"/>
+      <xsd:element name="Data" type="tns:ConsultaDeDivisasDataType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ConsultaDeDivisasDataHeaderType">
+    <xsd:sequence maxOccurs="1" minOccurs="1">
+      <xsd:element default="ConsultaDeDivisas" minOccurs="1" name="nombreOperacion" type="xsd:string"/>
+      <xsd:element minOccurs="1" name="total" type="xsd:int"/>
+      <xsd:element minOccurs="1" name="jornada" type="xsd:short"/>
+      <xsd:element minOccurs="1" name="canal" type="xsd:short"/>
+      <xsd:element minOccurs="1" name="modoDeOperacion" type="xsd:short"/>
+      <xsd:element minOccurs="1" name="usuario" type="xsd:string"/>
+      <xsd:element minOccurs="1" name="perfil" type="xsd:short"/>
+      <xsd:element minOccurs="1" name="versionServicio" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ConsultaDeDivisasDataType">
+    <xsd:sequence maxOccurs="1" minOccurs="1">
+      <xsd:element name="valor" type="xsd:decimal"/>
+      <xsd:element name="indicadorDeMoneda" type="xsd:short"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="ConsultaDeDivisasResponse" type="tns:ConsultaDeDivisasResponseType"/>
+  <xsd:complexType name="ConsultaDeDivisasResponseType">
+    <xsd:sequence maxOccurs="1" minOccurs="1">
+      <xsd:element name="Response" type="tns:ResponseType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ResponseType">
+    <xsd:sequence maxOccurs="1" minOccurs="1">
+      <xsd:element name="DataHeader" type="tns:DataHeaderRespType"/>
+      <xsd:element minOccurs="0" name="Data" type="tns:DataResponseType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="DataHeaderRespType">
+    <xsd:sequence maxOccurs="1" minOccurs="1">
+      <xsd:element name="nombreOperacion" type="xsd:string"/>
+      <xsd:element name="total" type="xsd:int"/>
+      <xsd:element name="caracterAceptacion" type="xsd:string"/>
+      <xsd:element name="ultimoMensaje" type="xsd:short"/>
+      <xsd:element name="codMsgRespuesta" type="xsd:short"/>
+      <xsd:element minOccurs="0" name="msgRespuesta" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="DataResponseType">
+    <xsd:all maxOccurs="1" minOccurs="1">
+      <xsd:element name="valorPesos" type="xsd:string"/>
+      <xsd:element name="valorDolares" type="xsd:string"/>
+      <xsd:element name="comision" type="xsd:string"/>
+      <xsd:element name="valorTasaCambio" type="xsd:string"/>
+      <xsd:element name="tasaPromedioCompra" type="xsd:string"/>
+      <xsd:element name="tasaRepMercado" type="xsd:string"/>
+    </xsd:all>
+  </xsd:complexType>
+  <xsd:element name="ConsultaDeDivisas" type="tns:ConsultaDeDivisasType"/>
+</xsd:schema>

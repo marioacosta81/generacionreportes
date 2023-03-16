@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<wsdl:definitions name="DocumentosRepresentativosUnificada" targetNamespace="http://www.davivienda.com/xml/DocumentosRepresentativosUnificada" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.davivienda.com/xml/DocumentosRepresentativosUnificada" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<wsdl:types>		
+		<xsd:schema targetNamespace="http://www.davivienda.com/xml/DocumentosRepresentativosUnificada" xmlns:mrm="http://www.davivienda.com/xml/DocumentosRepresentativosUnificada">			
+			<xsd:include schemaLocation="DocumentosRepresentativosUnificada.xsd"/>
+		</xsd:schema>
+	</wsdl:types>
+	
+	<wsdl:message name="DocumentosRepresentativosUnificada_in">
+		<wsdl:part name="DocumentosRepresentativosUnificada" element="tns:DocumentosRepresentativosUnificada"/>
+	</wsdl:message>
+	
+	<wsdl:message name="DocumentosRepresentativosUnificadaResponse_out">
+		<wsdl:part name="DocumentosRepresentativosUnificadaResponse" element="tns:DocumentosRepresentativosUnificadaResponse"/>
+	</wsdl:message>
+
+	<wsdl:portType name="DocumentosRepresentativosUnificadaPortType">
+		<wsdl:operation name="DocumentosRepresentativosUnificada">
+			<wsdl:input message="tns:DocumentosRepresentativosUnificada_in" name="DocumentosRepresentativosUnificada_Input"/>
+			<wsdl:output message="tns:DocumentosRepresentativosUnificadaResponse_out" name="DocumentosRepresentativosUnificada_Output"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	
+	<wsdl:binding name="DocumentosRepresentativosUnificadaSOAP_HTTP_Binding" type="tns:DocumentosRepresentativosUnificadaPortType">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="DocumentosRepresentativosUnificada">
+			<soap:operation soapAction=""/>
+			<wsdl:input name="DocumentosRepresentativosUnificada_Input">
+				<soap:body parts="DocumentosRepresentativosUnificada" use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="DocumentosRepresentativosUnificada_Output">
+				<soap:body parts="DocumentosRepresentativosUnificadaResponse" use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	
+	<wsdl:service name="DocumentosRepresentativosUnificada_HTTP_Service">
+		<wsdl:port binding="tns:DocumentosRepresentativosUnificadaSOAP_HTTP_Binding" name="DocumentosRepresentativosUnificadaSOAP_HTTP_Port">
+			<soap:address location="http://datapower.davivienda.loc/ESBService/DocumentosRepresentativosUnificada"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

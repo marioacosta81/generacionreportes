@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2.6hudson-86  svn-revision#12773.--><xsd:schema targetNamespace="http://www.davivienda.com/Esquemas/Framework/TokenTipo/v1" elementFormDefault="qualified" xmlns:ns0="http://www.davivienda.com/Esquemas/Framework/TokenTipo/v1" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:complexType name="TokenTipo">
+        <xsd:sequence>
+            <xsd:element name="valEstado" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="codActivacion" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="valSerialTokenActual" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="valSerialTokenRemplazo" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="codTipoToken" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="fecActivacion" type="xsd:date" minOccurs="0"/>
+            <xsd:element name="fecCaducidad" type="xsd:date" minOccurs="0"/>
+            <xsd:element name="valClavePersonal" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="valClaveDinamica" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="esTokenAsignado" type="xsd:boolean" minOccurs="0"/>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema> F

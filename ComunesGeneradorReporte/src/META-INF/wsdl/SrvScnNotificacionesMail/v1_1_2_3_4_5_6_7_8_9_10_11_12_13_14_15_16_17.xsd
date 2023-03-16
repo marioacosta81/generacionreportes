@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2.6hudson-86  svn-revision#12773.--><xsd:schema targetNamespace="http://www.davivienda.com/Esquemas/Framework/MunicipioTipo/v1" elementFormDefault="qualified" xmlns:ns1="http://www.davivienda.com/Esquemas/Framework/DepartamentoTipo/v1" xmlns:ns0="http://www.davivienda.com/Esquemas/Framework/MunicipioTipo/v1" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:import schemaLocation="v1_1_2_3_4_5_6_7_8_9_10_11_12_13_14_15_16_17_18.xsd" namespace="http://www.davivienda.com/Esquemas/Framework/DepartamentoTipo/v1"/>
+  <xsd:complexType name="MunicipioTipo">
+    <xsd:sequence>
+      <xsd:element name="idMunicipio" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="codMunicipio" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="valNombre" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="departamento" type="ns1:DepartamentoTipo"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

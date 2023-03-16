@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2.6b02  svn-revision#14033.--><xsd:schema targetNamespace="http://www.davivienda.com/Esquemas/FileNet/DocumentoTipo/v1" elementFormDefault="qualified" xmlns:ns1="http://www.davivienda.com/Esquemas/FileNet/OtrasPropiedadTipo/v1" xmlns:ns0="http://www.davivienda.com/Esquemas/FileNet/DocumentoTipo/v1" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:import schemaLocation="v1_1_2_3_4_5_6_7_8_9_10_11_12.xsd" namespace="http://www.davivienda.com/Esquemas/FileNet/OtrasPropiedadTipo/v1"/>
+  <xsd:complexType name="DocumentoTipo">
+    <xsd:sequence>
+      <xsd:element name="valClaseDocumento" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="valMimeType" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="valContenido" type="xsd:base64Binary" minOccurs="0" ns2:expectedContentTypes="application/octet-stream" xmlns:ns2="http://www.w3.org/2005/05/xmlmime"/>
+      <xsd:element name="otrasPropiedades" type="ns1:OtrasPropiedadTipo" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

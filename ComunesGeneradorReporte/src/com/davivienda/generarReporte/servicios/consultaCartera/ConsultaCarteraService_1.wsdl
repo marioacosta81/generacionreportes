@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://servicios.davivienda.com/consultaCarteraService" xmlns:ns0="http://servicios.davivienda.com/consultaCarteraService" xmlns:wsp200607="http://www.w3.org/2006/07/ws-policy" xmlns:wsp200409="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soap11="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:schema>
+      <xsd:import schemaLocation="ConsultaCarteraService.xsd1.xsd" namespace="http://servicios.davivienda.com/consultaCarteraServiceTypes"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ConsultaCarteraServiceInterface_consultaCartera">
+    <wsdl:part name="parameters" element="xsns:consultaCartera" xmlns:xsns="http://servicios.davivienda.com/consultaCarteraServiceTypes"/>
+  </wsdl:message>
+  <wsdl:message name="ConsultaCarteraServiceInterface_consultaCarteraResponse">
+    <wsdl:part name="result" element="xsns:consultaCarteraResponse" xmlns:xsns="http://servicios.davivienda.com/consultaCarteraServiceTypes"/>
+  </wsdl:message>
+  <wsdl:message name="ServicioException">
+    <wsdl:part name="ServicioException" element="xsns:ServicioException" xmlns:xsns="http://servicios.davivienda.com/consultaCarteraServiceTypes"/>
+  </wsdl:message>
+  <wsdl:portType name="ConsultaCarteraServiceInterface">
+    <wsdl:operation name="consultaCartera">
+      <wsdl:input name="consultaCarteraRequest" message="ns0:ConsultaCarteraServiceInterface_consultaCartera"/>
+      <wsdl:output name="consultaCarteraResponse" message="ns0:ConsultaCarteraServiceInterface_consultaCarteraResponse"/>
+      <wsdl:fault name="ServicioException" message="ns0:ServicioException"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ConsultaCarteraServiceInterfaceBinding" type="ns0:ConsultaCarteraServiceInterface">
+    <soap11:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="consultaCartera">
+      <soap11:operation soapAction="" style="document"/>
+      <wsdl:input name="consultaCarteraRequest">
+        <soap11:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="consultaCarteraResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ServicioException">
+        <soap11:fault name="ServicioException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ConsultaCarteraService">
+    <wsdl:port name="ConsultaCarteraServiceInterfacePort" binding="ns0:ConsultaCarteraServiceInterfaceBinding">
+      <soap11:address location="http://90.4.28.5:80/servicios/ConsultaCarteraService"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

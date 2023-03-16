@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="http://www.davivienda.com/xml/ConsultaDetalleCredHipotecarioLeasing" xmlns:tns="http://www.davivienda.com/xml/ConsultaDetalleCredHipotecarioLeasing" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+	
+<xsd:complexType name="ConsultaDetalleCredHipotecarioLeasingType">
+		
+<xsd:sequence maxOccurs="1" minOccurs="1">
+			
+<xsd:element minOccurs="1" name="Request" type="tns:RequestConsultaDetalleCredHipotecarioLeasing"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	
+<xsd:complexType name="RequestConsultaDetalleCredHipotecarioLeasing">
+		
+<xsd:sequence maxOccurs="1" minOccurs="1">
+			
+<xsd:element minOccurs="1" name="DataHeader" type="tns:ConsultaDetalleCredHipotecarioLeasingDataHeaderType"/>
+			
+<xsd:element name="Data" type="tns:ConsultaDetalleCredHipotecarioLeasingDataType"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	
+<xsd:complexType name="ConsultaDetalleCredHipotecarioLeasingDataHeaderType">
+		
+<xsd:sequence maxOccurs="1" minOccurs="1">
+			
+<xsd:element default="ConsultaDetalleCredHipotecarioLeasing" minOccurs="1" name="nombreOperacion" type="xsd:string"/>
+			
+<xsd:element minOccurs="1" name="total" type="xsd:int"/>
+			
+<xsd:element minOccurs="1" name="jornada" type="xsd:short"/>
+			
+<xsd:element minOccurs="1" name="canal" type="xsd:short"/>
+			
+<xsd:element minOccurs="1" name="modoDeOperacion" type="xsd:short"/>
+			
+<xsd:element minOccurs="1" name="usuario" type="xsd:string"/>
+			
+<xsd:element minOccurs="1" name="perfil" type="xsd:short"/>
+			
+<xsd:element minOccurs="1" name="versionServicio" type="xsd:string"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	
+<xsd:complexType name="ConsultaDetalleCredHipotecarioLeasingDataType">
+		
+<xsd:all maxOccurs="1" minOccurs="1">
+			
+<xsd:element name="numeroProducto" type="xsd:long"/> 
+		</xsd:all>
+	</xsd:complexType>
+	
+<xsd:element name="ConsultaDetalleCredHipotecarioLeasingResponse" type="tns:ConsultaDetalleCredHipotecarioLeasingResponseType">
+	</xsd:element>
+	
+<xsd:complexType name="ConsultaDetalleCredHipotecarioLeasingResponseType">
+		
+<xsd:sequence maxOccurs="1" minOccurs="1">
+			
+<xsd:element name="Response" type="tns:ResponseType"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	
+<xsd:complexType name="ResponseType">
+		
+<xsd:sequence maxOccurs="1" minOccurs="1">
+			
+<xsd:element name="DataHeader" type="tns:DataHeaderRespType"/>
+			
+<xsd:element minOccurs="0" name="Data" type="tns:DataResponseType"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	
+<xsd:complexType name="DataHeaderRespType">
+		
+<xsd:sequence maxOccurs="1" minOccurs="1">
+			
+<xsd:element name="nombreOperacion" type="xsd:string"/>
+			
+<xsd:element name="total" type="xsd:int"/>
+			
+<xsd:element name="caracterAceptacion" type="xsd:string"/>
+			
+<xsd:element name="ultimoMensaje" type="xsd:short"/>
+			
+<xsd:element name="codMsgRespuesta" type="xsd:short"/>
+			
+<xsd:element minOccurs="0" name="msgRespuesta" type="xsd:string"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	
+<xsd:complexType name="DataResponseType">
+		
+<xsd:sequence>  
+			
+<xsd:element name="producto" type="xsd:string"/>       
+			
+<xsd:element name="estadoCartera" type="xsd:string"/>  
+			
+<xsd:element name="valorOriginal" type="xsd:long"/> 
+			
+<xsd:element name="fechaDesembolso" type="xsd:int"/> 
+			
+<xsd:element name="tasaDeInteresPactada" type="xsd:int"/>     
+			
+<xsd:element name="tasaDeInteresCobrada" type="xsd:int"/>     
+			
+<xsd:element name="tasaDeMora" type="xsd:int"/> 
+			
+<xsd:element name="planDeAmortizacion" type="xsd:string"/> 
+			
+<xsd:element name="tipoDeInmueble" type="xsd:string"/> 
+			
+<xsd:element name="fechaAvaluo" type="xsd:int"/> 
+			
+<xsd:element name="valorAvaluo" type="xsd:long"/> 
+			
+<xsd:element name="valorComercial" type="xsd:long"/> 
+			
+<xsd:element name="fechaVtoGarantia" type="xsd:int"/>
+			
+<xsd:element name="usoGarantia" type="xsd:string"/>       
+			
+<xsd:element name="fechaVtoSeguro" type="xsd:int"/>  
+			
+<xsd:element name="fechaProximoVencimiento" type="xsd:int"/> 
+			
+<xsd:element name="ctaDebitoAutomatico" type="xsd:long"/> 
+			
+<xsd:element name="valorMora" type="xsd:long"/>     
+			
+<xsd:element name="moraDesde" type="xsd:int"/>     
+			
+<xsd:element name="noCtaAbogado" type="xsd:long"/> 
+			
+<xsd:element name="nombreAbogado" type="xsd:string"/> 
+			
+<xsd:element maxOccurs="4" minOccurs="1" name="Registro" type="tns:RegistroRespType"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	
+<xsd:complexType name="RegistroRespType">
+		
+<xsd:all maxOccurs="1" minOccurs="1">
+			
+<xsd:element name="titularidad" type="xsd:string"/> 
+			
+<xsd:element name="tipoIdTitular" type="xsd:short"/> 
+			
+<xsd:element name="noIdPropetario" type="xsd:long"/> 
+			
+<xsd:element name="nombresYApellidos" type="xsd:string"/> 
+		</xsd:all>
+	</xsd:complexType>
+	
+<xsd:element name="ConsultaDetalleCredHipotecarioLeasing" type="tns:ConsultaDetalleCredHipotecarioLeasingType">
+	</xsd:element>
+</xsd:schema>

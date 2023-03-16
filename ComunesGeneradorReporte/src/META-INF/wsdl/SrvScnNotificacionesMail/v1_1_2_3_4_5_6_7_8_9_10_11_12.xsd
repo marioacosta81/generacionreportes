@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2.6hudson-86  svn-revision#12773.--><xsd:schema targetNamespace="http://www.davivienda.com/Esquemas/Persona/PersonaNaturalTipo/v1" elementFormDefault="qualified" xmlns:ns1="http://www.davivienda.com/Esquemas/Framework/PersonaTipo/v1" xmlns:ns0="http://www.davivienda.com/Esquemas/Persona/PersonaNaturalTipo/v1" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:import schemaLocation="v1_1_2_3_4_5_6_7_8_9_10_11_12_13.xsd" namespace="http://www.davivienda.com/Esquemas/Framework/PersonaTipo/v1"/>
+  <xsd:complexType name="PersonaNaturalTipo">
+    <xsd:complexContent>
+      <xsd:extension base="ns1:PersonaTipo">
+        <xsd:sequence>
+          <xsd:element name="valPrimerNombre" type="xsd:string"/>
+          <xsd:element name="valSegundoNombre" type="xsd:string" minOccurs="0"/>
+          <xsd:element name="valPrimerApellido" type="xsd:string"/>
+          <xsd:element name="valSegundoApellido" type="xsd:string" minOccurs="0"/>
+          <xsd:element name="codSexo" type="xsd:string" minOccurs="0"/>
+          <xsd:element name="codEstadoCivil" type="xsd:string" minOccurs="0"/>
+          <xsd:element name="valLoginAutoservicio" type="xsd:string" minOccurs="0"/>
+          <xsd:element name="codNivelEducativo" type="xsd:string" minOccurs="0"/>
+          <xsd:element name="valFechaNacimiento" type="xsd:string" minOccurs="0"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+</xsd:schema>

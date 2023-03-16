@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2.6hudson-86  svn-revision#12773.--><xsd:schema targetNamespace="http://www.davivienda.com/Esquemas/Framework/ContextoSolicitudTipo/v1" elementFormDefault="qualified" xmlns:ns2="http://www.davivienda.com/Esquemas/Framework/ServicioTipo/v1" xmlns:ns1="http://www.davivienda.com/Esquemas/Framework/CriterioOrdenamientoTipo/v1" xmlns:ns4="http://www.davivienda.com/Esquemas/Framework/ConsumidorTipo/v1" xmlns:ns3="http://www.davivienda.com/Esquemas/Framework/OperacionCanalTipo/v1" xmlns:ns0="http://www.davivienda.com/Esquemas/Framework/ContextoSolicitudTipo/v1" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns5="http://www.davivienda.com/Esquemas/Framework/HuellaDigitalDispositivoTipo/v1" xmlns:ns6="http://www.davivienda.com/Esquemas/Framework/PaginacionTipo/v1">
+  <xsd:import schemaLocation="v1_1_2.xsd" namespace="http://www.davivienda.com/Esquemas/Framework/CriterioOrdenamientoTipo/v1"/>
+  <xsd:import schemaLocation="v1_1_2_3.xsd" namespace="http://www.davivienda.com/Esquemas/Framework/ServicioTipo/v1"/>
+  <xsd:import schemaLocation="v1_1_2_3_4.xsd" namespace="http://www.davivienda.com/Esquemas/Framework/OperacionCanalTipo/v1"/>
+  <xsd:import schemaLocation="v1_1_2_3_4_5.xsd" namespace="http://www.davivienda.com/Esquemas/Framework/ConsumidorTipo/v1"/>
+  <xsd:import schemaLocation="v1_1_2_3_4_5_6_7_8_9.xsd" namespace="http://www.davivienda.com/Esquemas/Framework/HuellaDigitalDispositivoTipo/v1"/>
+  <xsd:import schemaLocation="v1_1_2_3_4_5_6_7_8_9_10.xsd" namespace="http://www.davivienda.com/Esquemas/Framework/PaginacionTipo/v1"/>
+  <xsd:complexType name="ContextoSolicitudTipo">
+    <xsd:sequence>
+      <xsd:element name="servicio" type="ns2:ServicioTipo"/>
+      <xsd:element name="operacionCanal" type="ns3:OperacionCanalTipo"/>
+      <xsd:element name="consumidor" type="ns4:ConsumidorTipo"/>
+      <xsd:element name="huellaDigitalDispositivo" type="ns5:HuellaDigitalDispositivoTipo" minOccurs="0"/>
+      <xsd:element name="criteriosOrdenamiento">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="criterioOrdenamiento" type="ns1:CriterioOrdenamientoTipo" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="paginacion" type="ns6:PaginacionTipo" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

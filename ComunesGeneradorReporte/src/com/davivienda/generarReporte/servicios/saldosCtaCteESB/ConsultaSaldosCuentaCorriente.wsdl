@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://www.davivienda.com/xml/ConsultaSaldosCuentaCorriente" xmlns:ns0="http://www.davivienda.com/xml/ConsultaSaldosCuentaCorriente" xmlns:wsp200607="http://www.w3.org/2006/07/ws-policy" xmlns:wsp200409="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soap11="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:types xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+        <xsd:schema>
+            <xsd:import schemaLocation="ConsultaSaldosCuentaCorriente_1.xsd" namespace="http://www.davivienda.com/xml/ConsultaSaldosCuentaCorriente"/>
+            <xsd:import schemaLocation="ConsultaSaldosCuentaCorriente_2.xsd" namespace="http://www.davivienda.com/xml/ConsultaSaldosCuentaCorriente"/>
+        </xsd:schema>
+    </wsdl:types>
+    <wsdl:message name="ConsultaSaldosCuentaCorriente_in">
+        <wsdl:part name="ConsultaSaldosCuentaCorriente" element="xsns:ConsultaSaldosCuentaCorriente" xmlns:xsns="http://www.davivienda.com/xml/ConsultaSaldosCuentaCorriente"/>
+    </wsdl:message>
+    <wsdl:message name="ConsultaSaldosCuentaCorriente_out">
+        <wsdl:part name="ConsultaSaldosCuentaCorrienteResponse" element="xsns:ConsultaSaldosCuentaCorrienteResponse" xmlns:xsns="http://www.davivienda.com/xml/ConsultaSaldosCuentaCorriente"/>
+    </wsdl:message>
+    <wsdl:portType name="ConsultaSaldosCuentaCorrientePortType">
+        <wsdl:operation name="ConsultaSaldosCuentaCorriente">
+            <wsdl:input name="ConsultaSaldosCuentaCorriente_Input" message="ns0:ConsultaSaldosCuentaCorriente_in"/>
+            <wsdl:output name="ConsultaSaldosCuentaCorriente_Output" message="ns0:ConsultaSaldosCuentaCorriente_out"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="FabricaCredito05_HTTP_Binding" type="ns0:ConsultaSaldosCuentaCorrientePortType">
+        <soap11:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <wsdl:operation name="ConsultaSaldosCuentaCorriente">
+            <soap11:operation soapAction="" style="document"/>
+            <wsdl:input name="ConsultaSaldosCuentaCorriente_Input">
+                <soap11:body parts="ConsultaSaldosCuentaCorriente" use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="ConsultaSaldosCuentaCorriente_Output">
+                <soap11:body parts="ConsultaSaldosCuentaCorrienteResponse" use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="FabricaCredito05_HTTP_Service">
+        <wsdl:port name="FabricaCredito05_HTTP_Port" binding="ns0:FabricaCredito05_HTTP_Binding">
+            <soap11:address location="http://90.3.1.61:80/ESBService/ConsultaSaldosCuentaCorriente_37"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

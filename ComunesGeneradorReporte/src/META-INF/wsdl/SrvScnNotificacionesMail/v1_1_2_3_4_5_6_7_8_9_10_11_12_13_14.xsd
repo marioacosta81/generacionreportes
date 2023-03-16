@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2.6hudson-86  svn-revision#12773.--><xsd:schema targetNamespace="http://www.davivienda.com/Esquemas/Framework/ContactoTipo/v1" elementFormDefault="qualified" xmlns:ns2="http://www.davivienda.com/Esquemas/Framework/UbicacionPersonaTipo/v1" xmlns:ns1="http://www.davivienda.com/Esquemas/Framework/TelefonoTipo/v1" xmlns:ns0="http://www.davivienda.com/Esquemas/Framework/ContactoTipo/v1" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:import schemaLocation="v1_1_2_3_4_5_6_7_8_9_10_11_12_13_14_15.xsd" namespace="http://www.davivienda.com/Esquemas/Framework/TelefonoTipo/v1"/>
+  <xsd:import schemaLocation="v1_1_2_3_4_5_6_7_8_9_10_11_12_13_14_15_16.xsd" namespace="http://www.davivienda.com/Esquemas/Framework/UbicacionPersonaTipo/v1"/>
+  <xsd:complexType name="ContactoPersonaTipo">
+    <xsd:sequence>
+      <xsd:element name="telefonos">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="telefono" type="ns1:TelefonoTipo" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="correosElectronicos">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="valCorreoElectronico" type="xsd:string" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="esAutorizaNotificacionElectronica" type="xsd:boolean" minOccurs="0"/>
+      <xsd:element name="ubicaciones">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="ubicacion" type="ns2:UbicacionPersonaTipo" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

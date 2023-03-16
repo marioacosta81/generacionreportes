@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2.6hudson-86  svn-revision#12773.--><xsd:schema targetNamespace="http://www.davivienda.com/Notificaciones/SrvScnNotificacionesMail/v1" elementFormDefault="qualified" xmlns:ns2="http://www.davivienda.com/Esquemas/Persona/ClienteNaturalTipo/v1" xmlns:ns1="http://www.davivienda.com/Esquemas/Framework/ContextoSolicitudTipo/v1" xmlns:ns3="http://www.davivienda.com/Esquemas/Framework/ContextoRespuestaTipo/v1" xmlns:ns0="http://www.davivienda.com/Notificaciones/SrvScnNotificacionesMail/v1" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:import schemaLocation="v1_1.xsd" namespace="http://www.davivienda.com/Esquemas/Framework/ContextoSolicitudTipo/v1"/>
+  <xsd:import schemaLocation="v1_1_2_3_4_5_6_7_8_9_10_11.xsd" namespace="http://www.davivienda.com/Esquemas/Persona/ClienteNaturalTipo/v1"/>
+  <xsd:import schemaLocation="v1_1_2_3_4_5_6_7_8_9_10_11_12_13_14_15_16_17_18_19.xsd" namespace="http://www.davivienda.com/Esquemas/Framework/ContextoRespuestaTipo/v1"/>
+  <xsd:complexType name="ParametroPlantillaTipo">
+    <xsd:sequence>
+      <xsd:element name="valNombre" type="xsd:string" form="unqualified"/>
+      <xsd:element name="valValor" type="xsd:string" form="unqualified"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="PlantillaTipo">
+    <xsd:sequence>
+      <xsd:element name="idPlantilla" type="xsd:string" form="unqualified"/>
+      <xsd:element name="parametrosPlantilla" type="ns0:ParametroPlantillaTipo" form="unqualified" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="DataMail">
+    <xsd:sequence>
+      <xsd:element name="tipoNotificacion" type="xsd:string" form="unqualified"/>
+      <xsd:element name="destino" type="ns0:DestinoTipo" form="unqualified"/>
+      <xsd:element name="mensaje" type="ns0:MensajeTipo" form="unqualified"/>
+      <xsd:element name="adjuntos" type="ns0:AdjuntoTipo" form="unqualified" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+      <xsd:element name="isEsperaRespuesta" type="xsd:boolean" form="unqualified"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="AdjuntoTipo">
+    <xsd:sequence>
+      <xsd:element name="valNombre" type="xsd:string" form="unqualified"/>
+      <xsd:element name="valContenido" type="xsd:base64Binary" form="unqualified"/>
+      <xsd:element name="valTipo" type="xsd:string" form="unqualified"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="MsjSolOpEnviarMail">
+    <xsd:sequence>
+      <xsd:element name="contextoSolicitud" type="ns1:ContextoSolicitudTipo"/>
+      <xsd:element name="dataMail" type="ns0:DataMail"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="DestinoTipo">
+    <xsd:sequence>
+      <xsd:element name="cliente" type="ns2:ClienteNaturalTipo" form="unqualified"/>
+      <xsd:element name="valMail" type="xsd:string" form="unqualified" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="MsjRespOpEnviarMail">
+    <xsd:sequence>
+      <xsd:element name="contextoRespuesta" type="ns3:ContextoRespuestaTipo"/>
+      <xsd:element name="clienteNatural" type="ns2:ClienteNaturalTipo"/>
+      <xsd:element name="codActivacion" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="codTipoToken" type="xsd:string"/>
+      <xsd:element name="tipoAutenticacion" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="estadoClaveVirtual" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="notificarAlCorreo" type="xsd:boolean" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="MensajeTipo">
+    <xsd:sequence>
+      <xsd:element name="valAsunto" type="xsd:string" form="unqualified"/>
+      <xsd:element name="valContenido" type="xsd:string" form="unqualified" minOccurs="0"/>
+      <xsd:element name="plantilla" type="ns0:PlantillaTipo" form="unqualified" minOccurs="0"/>
+      <xsd:element name="formato" type="xsd:string" form="unqualified" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="msjSolOpEnviarMail" type="ns0:MsjSolOpEnviarMail"/>
+  <xsd:element name="msjRespOpEnviarMail" type="ns0:MsjRespOpEnviarMail"/>
+</xsd:schema>

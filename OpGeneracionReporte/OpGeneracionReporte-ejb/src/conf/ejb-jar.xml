@@ -1,0 +1,23 @@
+<?xml version = '1.0' encoding = 'windows-1252'?>
+<ejb-jar xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee/ejb-jar_3_0.xsd" version="3.0" xmlns="http://java.sun.com/xml/ns/javaee">
+    <enterprise-beans>
+        <session>
+            <ejb-name>OpGeneracionReporte</ejb-name>
+            <env-entry>
+                <env-entry-name>NombreServicio</env-entry-name>
+                <env-entry-type>java.lang.String</env-entry-type>
+                <env-entry-value>SrvScnGeneracionReporte</env-entry-value>
+            </env-entry>   
+        </session>
+    
+    </enterprise-beans>
+    <assembly-descriptor>
+        <container-transaction>
+            <method>
+                <ejb-name>OpGeneracionReporte</ejb-name>
+                <method-name>*</method-name>
+            </method>
+            <trans-attribute>NotSupported</trans-attribute>
+        </container-transaction>
+    </assembly-descriptor>
+</ejb-jar>

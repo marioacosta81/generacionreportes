@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="http://www.davivienda.com/xml/ConsultaSaldoTituloDabuenavida" xmlns:tns="http://www.davivienda.com/xml/ConsultaSaldoTituloDabuenavida" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:complexType name="ConsultaSaldoTituloDabuenavidaType">
+    <xsd:sequence maxOccurs="1" minOccurs="1">
+      <xsd:element minOccurs="1" name="Request" type="tns:RequestConsultaSaldoTituloDabuenavida"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="RequestConsultaSaldoTituloDabuenavida">
+    <xsd:sequence maxOccurs="1" minOccurs="1">
+      <xsd:element minOccurs="1" name="DataHeader" type="tns:ConsultaSaldoTituloDabuenavidaDataHeaderType"/>
+      <xsd:element name="Data" type="tns:ConsultaSaldoTituloDabuenavidaDataType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ConsultaSaldoTituloDabuenavidaDataHeaderType">
+    <xsd:sequence maxOccurs="1" minOccurs="1">
+      <xsd:element default="ConsultaSaldoTituloDabuenavida" minOccurs="1" name="nombreOperacion" type="xsd:string"/>
+      <xsd:element minOccurs="1" name="total" type="xsd:int"/>
+      <xsd:element minOccurs="1" name="jornada" type="xsd:short"/>
+      <xsd:element minOccurs="1" name="canal" type="xsd:short"/>
+      <xsd:element minOccurs="1" name="modoDeOperacion" type="xsd:short"/>
+      <xsd:element minOccurs="1" name="usuario" type="xsd:string"/>
+      <xsd:element minOccurs="1" name="perfil" type="xsd:short"/>
+      <xsd:element minOccurs="1" name="versionServicio" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ConsultaSaldoTituloDabuenavidaDataType">
+    <xsd:sequence maxOccurs="1" minOccurs="1">
+      <xsd:element name="tipoDeProducto" type="xsd:short"/>
+      <xsd:element name="numeroDeProducto" type="xsd:long"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="ConsultaSaldoTituloDabuenavidaResponse" type="tns:ConsultaSaldoTituloDabuenavidaResponseType"/>
+  <xsd:complexType name="ConsultaSaldoTituloDabuenavidaResponseType">
+    <xsd:sequence maxOccurs="1" minOccurs="1">
+      <xsd:element name="Response" type="tns:ResponseType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ResponseType">
+    <xsd:sequence maxOccurs="1" minOccurs="1">
+      <xsd:element name="DataHeader" type="tns:DataHeaderRespType"/>
+      <xsd:element minOccurs="0" name="Data" type="tns:DataResponseType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="DataHeaderRespType">
+    <xsd:sequence maxOccurs="1" minOccurs="1">
+      <xsd:element name="nombreOperacion" type="xsd:string"/>
+      <xsd:element name="total" type="xsd:int"/>
+      <xsd:element name="caracterAceptacion" type="xsd:string"/>
+      <xsd:element name="ultimoMensaje" type="xsd:short"/>
+      <xsd:element name="codMsgRespuesta" type="xsd:short"/>
+      <xsd:element minOccurs="0" name="msgRespuesta" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="TituloDabuenavidaType">
+    <xsd:all maxOccurs="1" minOccurs="1">
+      <xsd:element minOccurs="1" name="saldoTotal" type="xsd:decimal"/>
+      <xsd:element minOccurs="1" name="saldoDisponibleParaRetiroParcial" type="xsd:decimal"/>
+      <xsd:element minOccurs="1" name="saldoParaCancelacion" type="xsd:decimal"/>
+      <xsd:element minOccurs="1" name="indicadorDeClausula" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="1" name="nombres" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="1" name="primerApellido" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="1" name="segundoApellido" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="1" name="numeroIdentificacion" type="xsd:long"/>
+      <xsd:element minOccurs="1" name="tipoIdentificacion" type="xsd:short"/>
+      <xsd:element minOccurs="1" name="valorCuotaMensual" type="xsd:decimal"/>
+      <xsd:element minOccurs="1" name="premioPorElQueJugo" type="xsd:decimal"/>
+      <xsd:element minOccurs="1" name="posicionEnLaQueJugo" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="1" name="posicionGanadora" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="1" name="numeroDeMesesTranscurridos" type="xsd:short"/>
+      <xsd:element minOccurs="1" name="vigencia" type="xsd:short"/>
+      <xsd:element minOccurs="1" name="upacMonto" type="xsd:decimal"/>
+      <xsd:element minOccurs="1" name="costoAdministracion" type="xsd:decimal"/>
+      <xsd:element minOccurs="1" name="cuotaInicial" type="xsd:decimal"/>
+      <xsd:element minOccurs="1" name="fechaDeVenta" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="1" name="fechaDeApertura" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="1" name="cuenta" type="xsd:long"/>
+      <xsd:element minOccurs="1" name="fechaPosicionCliente" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="1" name="fechaPosicionGanadora" nillable="true" type="xsd:string"/>
+    </xsd:all>
+  </xsd:complexType>
+  <xsd:element name="ConsultaSaldoTituloDabuenavida" type="tns:ConsultaSaldoTituloDabuenavidaType"/>
+  <xsd:complexType name="DataResponseType">
+    <xsd:sequence>
+      <xsd:element name="TituloDabuenavida" type="tns:TituloDabuenavidaType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

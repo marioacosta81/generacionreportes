@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2.6hudson-86  svn-revision#12773.--><xsd:schema targetNamespace="http://www.davivienda.com/Esquemas/Framework/ConsumidorTipo/v1" elementFormDefault="qualified" xmlns:ns2="http://www.davivienda.com/Esquemas/Framework/CanalTipo/v1" xmlns:ns1="http://www.davivienda.com/Esquemas/Framework/AplicacionTipo/v1" xmlns:ns3="http://www.davivienda.com/Esquemas/Framework/TerminalTipo/v1" xmlns:ns0="http://www.davivienda.com/Esquemas/Framework/ConsumidorTipo/v1" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:import schemaLocation="v1_1_2_3_4_5_6.xsd" namespace="http://www.davivienda.com/Esquemas/Framework/AplicacionTipo/v1"/>
+  <xsd:import schemaLocation="v1_1_2_3_4_5_6_7.xsd" namespace="http://www.davivienda.com/Esquemas/Framework/CanalTipo/v1"/>
+  <xsd:import schemaLocation="v1_1_2_3_4_5_6_7_8.xsd" namespace="http://www.davivienda.com/Esquemas/Framework/TerminalTipo/v1"/>
+  <xsd:complexType name="ConsumidorTipo">
+    <xsd:sequence>
+      <xsd:element name="idConsumidor" type="xsd:string"/>
+      <xsd:element name="aplicacion" type="ns1:AplicacionTipo"/>
+      <xsd:element name="canal" type="ns2:CanalTipo"/>
+      <xsd:element name="terminal" type="ns3:TerminalTipo"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

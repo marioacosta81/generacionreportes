@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2.6hudson-86  svn-revision#12773.--><xsd:schema targetNamespace="http://www.davivienda.com/Esquemas/Framework/ResultadoTransaccionTipo/v1" elementFormDefault="qualified" xmlns:ns0="http://www.davivienda.com/Esquemas/Framework/ResultadoTransaccionTipo/v1" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:complexType name="ResultadoTransaccionTipo">
+    <xsd:sequence>
+      <xsd:element name="codEstadoTransaccion" type="xsd:string"/>
+      <xsd:element name="valCaracterAceptacion" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="valNumeroAprobacion" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="idTransaccion" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="fecOperacion" type="xsd:dateTime" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

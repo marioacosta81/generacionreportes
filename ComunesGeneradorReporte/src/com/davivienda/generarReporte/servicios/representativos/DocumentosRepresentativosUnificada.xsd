@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<xsd:schema targetNamespace="http://www.davivienda.com/xml/DocumentosRepresentativosUnificada" 
+xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+xmlns:tns="http://www.davivienda.com/xml/DocumentosRepresentativosUnificada">
+   <xsd:complexType name="DocumentosRepresentativosUnificadaType">
+      <xsd:sequence>
+         <xsd:element name="Request" type="tns:RequestDocumentosRepresentativosUnificadaType"/>
+      </xsd:sequence>
+   </xsd:complexType>    
+   <xsd:complexType name="DataHeaderReqType">
+      <xsd:sequence maxOccurs="1" minOccurs="1">
+         <xsd:element default="DocumentosRepresentativosUnificada" name="nombreOperacion" type="xsd:string"/>
+         <xsd:element name="total" type="xsd:int"/>
+         <xsd:element name="jornada" type="xsd:short"/>
+         <xsd:element name="canal" type="xsd:short"/>
+         <xsd:element name="modoDeOperacion" type="xsd:short"/>
+         <xsd:element name="usuario" type="xsd:string"/>
+         <xsd:element name="perfil" type="xsd:short"/>
+         <xsd:element default="1.0.0" name="versionServicio" type="xsd:string"/>
+		 <xsd:element name="idTransaccion" type="xsd:string"/>
+      </xsd:sequence>
+   </xsd:complexType>
+      <xsd:complexType name="DataReqType">
+      <xsd:sequence>
+		<xsd:element name="codOficina" type="xsd:int" minOccurs="1" />
+		<xsd:element name="valTalon" type="xsd:int" minOccurs="1" />
+		<xsd:element name="fecFechaInicio" type="xsd:date" minOccurs="0" />
+		<xsd:element name="fecFechaFinal" type="xsd:date" minOccurs="0" />
+		<xsd:element name="codTipoProducto" type="xsd:int" minOccurs="1" />
+		<xsd:element name="valNumeroProducto" type="xsd:string" minOccurs="1" />	
+		<xsd:element name="valSecuencia" type="xsd:int" minOccurs="0" />			
+		</xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType name="DataHeaderRespType">
+      <xsd:sequence maxOccurs="1" minOccurs="1">
+         <xsd:element name="nombreOperacion" type="xsd:string"/>
+         <xsd:element name="total" type="xsd:int"/>
+         <xsd:element name="caracterAceptacion" type="xsd:string"/>
+		 <xsd:element name="ultimoMensaje" type="xsd:short"/>		 
+         <xsd:element name="codMsgRespuesta" type="xsd:short"/>
+		 <xsd:element minOccurs="0" name="msgRespuesta" type="xsd:string"/>
+		 <xsd:element name="idTransaccion" type="xsd:string"/>
+      </xsd:sequence>
+   </xsd:complexType> 
+   <xsd:element name="DocumentosRepresentativosUnificada" type="tns:DocumentosRepresentativosUnificadaType"/>
+   <xsd:element name="DocumentosRepresentativosUnificadaResponse" type="tns:DocumentosRepresentativosUnificadaResponseType"/>
+ 
+   <xsd:complexType name="DocumentosRepresentativosUnificadaResponseType">
+      <xsd:sequence>
+         <xsd:element name="Response" type="tns:ResponseDocumentosRepresentativosUnificadaType"/>
+      </xsd:sequence>
+   </xsd:complexType>   
+   <xsd:complexType name="RequestDocumentosRepresentativosUnificadaType">
+      <xsd:sequence>
+         <xsd:element name="DataHeader" type="tns:DataHeaderReqType"/>
+		 <xsd:element name="Data" type="tns:DataReqType"/>
+      </xsd:sequence>
+   </xsd:complexType>   
+   <xsd:complexType name="ResponseDocumentosRepresentativosUnificadaType">
+      <xsd:sequence>
+         <xsd:element name="DataHeader" type="tns:DataHeaderRespType"/>		 
+		 <xsd:element name="Data" type="tns:DataRespType" minOccurs="0"/>
+      </xsd:sequence>
+   </xsd:complexType>   
+
+       <xsd:complexType name="DataRespType">
+			<xsd:sequence>
+				<xsd:element name="valEtiquetaFecha" type="xsd:string" minOccurs="1" />
+				<xsd:element name="valSociedadAdministradora" type="xsd:string" minOccurs="1" />
+				<xsd:element name="valNombreDocumento" type="xsd:string" minOccurs="1" />
+				<xsd:element name="valNombreFondo" type="xsd:string" minOccurs="1" />
+				<xsd:element name="valEtiquetaEncabezado" type="xsd:string" minOccurs="1" />
+				<xsd:element name="valEtiquetaContenido" type="xsd:string" minOccurs="1" />
+				<xsd:element name="valEtiquetaNombreInversorista" type="xsd:string" minOccurs="1" />
+				<xsd:element name="valNombreCliente" type="xsd:string" minOccurs="1" />
+				<xsd:element name="valEtiquetaIdentificacionInversionista" type="xsd:string" minOccurs="1" />
+				<xsd:element name="valNumeroIdentificacionCliente" type="xsd:int" minOccurs="1" />
+				<xsd:element name="valSenalPrensentaParticipacion" type="xsd:string" minOccurs="1" />
+				<xsd:element name="valEtiquetaNombreParticipacionFondo" type="xsd:string" minOccurs="0" />
+				<xsd:element name="valEtiquetaFechaTablaAportes" type="xsd:string" minOccurs="1" />
+				<xsd:element name="valEtiquetaValorAporteTabla" type="xsd:string" minOccurs="1" />
+				<xsd:element name="valEtiquetaValorUnidad" type="xsd:string" minOccurs="1" />
+				<xsd:element name="valEtiquetaNumeroUnidades" type="xsd:string" minOccurs="1" />
+				<xsd:element name="fecFechaAporte" type="xsd:string" minOccurs="0" />
+				<xsd:element name="valValorMovimiento" type="xsd:string" minOccurs="0" />
+				<xsd:element name="valValorUnidad" type="xsd:string" minOccurs="0" />
+				<xsd:element name="valNumeroUnidades" type="xsd:string" minOccurs="0" />
+				<xsd:element name="AportesRealizados" type="tns:AportesRealizadosType" minOccurs="0" maxOccurs="1"/>
+				<xsd:element name="valEtiquetaFechaFormatoB" type="xsd:string" minOccurs="1"/>
+				<xsd:element name="fecFechaAperturaProducto" type="xsd:string" minOccurs="1"/>
+				<xsd:element name="valEtiquetaFechaFormatoC" type="xsd:string" minOccurs="1"/>
+				<xsd:element name="fecFechaVencimientoProducto" type="xsd:string" minOccurs="1"/>
+				<xsd:element name="valEtiquetaPermanencia" type="xsd:string" minOccurs="1"/>
+				<xsd:element name="valPlazoMinimo" type="xsd:string" minOccurs="1"/>
+				<xsd:element name="valEtiquetaRetiro" type="xsd:string" minOccurs="1"/>
+				<xsd:element name="valValorComisionRetiroAnticipado" type="xsd:string" minOccurs="1"/>
+				<xsd:element name="valEtiquetaTablaParticipacion" type="xsd:string" minOccurs="1"/>
+				<xsd:element name="valEtiquetaParticipacion" type="xsd:string" minOccurs="1"/>
+				<xsd:element name="valEtiquetaTipoPersona" type="xsd:string" minOccurs="1"/>
+				<xsd:element name="valEtiquetaRangoSaldoPromedio" type="xsd:string" minOccurs="1"/>
+				<xsd:element name="valEtiquetaPorcentajeComision" type="xsd:string" minOccurs="1"/>
+				<xsd:element name="Participaciones" type="tns:ParticipacionesType" minOccurs="0" maxOccurs="1"/>
+				<xsd:element name="valPaginaTablaParticipaciones" type="xsd:string" minOccurs="1"/>
+				<xsd:element name="valEtiquetaPiePaginaA" type="xsd:string" minOccurs="1"/>
+				<xsd:element name="valEtiquetaPiePaginaB" type="xsd:string" minOccurs="0"/>
+				<xsd:element name="valEtiquetaPiePaginaC" type="xsd:string" minOccurs="0"/>
+				<xsd:element name="valEtiquetaPiePaginaD" type="xsd:string" minOccurs="0"/>
+				<xsd:element name="valEtiquetaPiePaginaE" type="xsd:string" minOccurs="0"/>
+				<xsd:element name="valEtiquetaPiePaginaF" type="xsd:string" minOccurs="0"/>
+				<xsd:element name="codTipoIdentificacion" type="xsd:string" minOccurs="0"/>
+				<xsd:element name="valNombreCiudad" type="xsd:string" minOccurs="0"/>
+				<xsd:element name="valDireccionCliente" type="xsd:string" minOccurs="0"/>
+				<xsd:element name="valOficina" type="xsd:string" minOccurs="0"/>
+				<xsd:element name="valCuentaCorredores" type="xsd:string" minOccurs="0"/>
+			</xsd:sequence>
+</xsd:complexType>
+
+ <xsd:complexType name="AportesRealizadosType">
+		<xsd:sequence>				
+				<xsd:element name="AporteRealizado" type="tns:AporteRealizadoType" minOccurs="0" maxOccurs="unbounded" />
+		</xsd:sequence>
+   </xsd:complexType>
+
+ <xsd:complexType name="AporteRealizadoType">
+		<xsd:sequence>				
+				<xsd:element name="fecFecha" type="xsd:string" minOccurs="1" />
+				<xsd:element name="valAporte" type="xsd:string" minOccurs="1" />
+				<xsd:element name="valNumeroUnidades" type="xsd:string" minOccurs="1" />
+				<xsd:element name="valUnidad" type="xsd:string" minOccurs="1" />			
+		</xsd:sequence>
+   </xsd:complexType>
+   
+   <xsd:complexType name="ParticipacionesType">
+		<xsd:sequence>
+				<xsd:element name="Participacion" type="tns:ParticipacionType" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+   </xsd:complexType>
+   
+    <xsd:complexType name="ParticipacionType">
+		<xsd:sequence>
+				<xsd:element name="codParticipacion" type="xsd:string" minOccurs="1"/>
+				<xsd:element name="valNombreParticipacion" type="xsd:string" minOccurs="1"/>
+				<xsd:element name="codTipoPersona" type="xsd:string" minOccurs="1"/>
+				<xsd:element name="valRangoSaldoPromedio" type="xsd:string" minOccurs="1"/>
+				<xsd:element name="valPorcentajeComisionAdmon" type="xsd:string" minOccurs="1"/>	
+		</xsd:sequence>
+   </xsd:complexType>
+   
+</xsd:schema>

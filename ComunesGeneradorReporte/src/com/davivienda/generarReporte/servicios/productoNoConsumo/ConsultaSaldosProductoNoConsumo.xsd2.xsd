@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="http://www.davivienda.com/xml/ConsultaSaldosProductoNoConsumo" xmlns:tns="http://www.davivienda.com/xml/ConsultaSaldosProductoNoConsumo" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:complexType name="ConsultaSaldosProductoNoConsumoType">
+    <xsd:sequence maxOccurs="1" minOccurs="1">
+      <xsd:element minOccurs="1" name="Request" type="tns:RequestConsultaSaldosProductoNoConsumo"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="RequestConsultaSaldosProductoNoConsumo">
+    <xsd:sequence maxOccurs="1" minOccurs="1">
+      <xsd:element minOccurs="1" name="DataHeader" type="tns:ConsultaSaldosProductoNoConsumoDataHeaderType"/>
+      <xsd:element name="Data" type="tns:ConsultaSaldosProductoNoConsumoDataType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ConsultaSaldosProductoNoConsumoDataHeaderType">
+    <xsd:sequence maxOccurs="1" minOccurs="1">
+      <xsd:element default="ConsultaSaldosProductoNoConsumo" minOccurs="1" name="nombreOperacion" type="xsd:string"/>
+      <xsd:element minOccurs="1" name="total" type="xsd:int"/>
+      <xsd:element minOccurs="1" name="jornada" type="xsd:short"/>
+      <xsd:element minOccurs="1" name="canal" type="xsd:short"/>
+      <xsd:element minOccurs="1" name="modoDeOperacion" type="xsd:short"/>
+      <xsd:element minOccurs="1" name="usuario" type="xsd:string"/>
+      <xsd:element minOccurs="1" name="perfil" type="xsd:short"/>
+      <xsd:element minOccurs="1" name="versionServicio" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ConsultaSaldosProductoNoConsumoDataType">
+    <xsd:all maxOccurs="1" minOccurs="1">
+      <xsd:element name="numeroDeProducto" type="xsd:long"/>
+      <xsd:element minOccurs="0" name="indicadorConsulta" type="xsd:short"/>
+    </xsd:all>
+  </xsd:complexType>
+  <xsd:element name="ConsultaSaldosProductoNoConsumoResponse" type="tns:ConsultaSaldosProductoNoConsumoResponseType"/>
+  <xsd:complexType name="ConsultaSaldosProductoNoConsumoResponseType">
+    <xsd:sequence maxOccurs="1" minOccurs="1">
+      <xsd:element name="Response" type="tns:ResponseType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ResponseType">
+    <xsd:sequence maxOccurs="1" minOccurs="1">
+      <xsd:element name="DataHeader" type="tns:DataHeaderRespType"/>
+      <xsd:element minOccurs="0" name="Data" type="tns:DataResponseType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="DataHeaderRespType">
+    <xsd:sequence maxOccurs="1" minOccurs="1">
+      <xsd:element name="nombreOperacion" type="xsd:string"/>
+      <xsd:element name="total" type="xsd:int"/>
+      <xsd:element name="caracterAceptacion" type="xsd:string"/>
+      <xsd:element name="ultimoMensaje" type="xsd:short"/>
+      <xsd:element name="codMsgRespuesta" type="xsd:short"/>
+      <xsd:element minOccurs="0" name="msgRespuesta" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ProductoNoConsumoType">
+    <xsd:all maxOccurs="1" minOccurs="1">
+      <xsd:element name="numeroDeProducto" nillable="true" type="xsd:string"/>
+      <xsd:element name="diasMora" type="xsd:int"/>
+      <xsd:element name="fechaSaldo" type="xsd:int"/>
+      <xsd:element name="valorSaldo" type="xsd:decimal"/>
+      <xsd:element name="fechaMora" type="xsd:int"/>
+      <xsd:element name="valorMora" type="xsd:decimal"/>
+      <xsd:element name="fechaCuota" type="xsd:int"/>
+      <xsd:element name="valorCuota" type="xsd:decimal"/>
+      <xsd:element name="valorPorAplicar" type="xsd:decimal"/>
+      <xsd:element name="valorCanje" type="xsd:decimal"/>
+      <xsd:element name="indicadorLink" nillable="true" type="xsd:string"/>
+      <xsd:element name="valorCupoDisponibleCx" type="xsd:decimal"/>
+      <xsd:element name="valorAprobado" type="xsd:decimal"/>
+    </xsd:all>
+  </xsd:complexType>
+  <xsd:element name="ConsultaSaldosProductoNoConsumo" type="tns:ConsultaSaldosProductoNoConsumoType"/>
+  <xsd:complexType name="DataResponseType">
+    <xsd:sequence>
+      <xsd:element name="ProductoNoConsumo" type="tns:ProductoNoConsumoType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

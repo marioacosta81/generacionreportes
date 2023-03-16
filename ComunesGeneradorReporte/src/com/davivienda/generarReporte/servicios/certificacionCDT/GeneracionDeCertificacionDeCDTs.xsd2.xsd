@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="http://www.davivienda.com/xml/GeneracionDeCertificacionDeCDTs" xmlns:tns="http://www.davivienda.com/xml/GeneracionDeCertificacionDeCDTs" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:complexType name="GeneracionDeCertificacionDeCDTsType">
+    <xsd:sequence maxOccurs="1" minOccurs="1">
+      <xsd:element minOccurs="1" name="Request" type="tns:RequestGeneracionDeCertificacionDeCDTs"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="RequestGeneracionDeCertificacionDeCDTs">
+    <xsd:sequence maxOccurs="1" minOccurs="1">
+      <xsd:element minOccurs="1" name="DataHeader" type="tns:GeneracionDeCertificacionDeCDTsDataHeaderType"/>
+      <xsd:element name="Data" type="tns:GeneracionDeCertificacionDeCDTsDataType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="GeneracionDeCertificacionDeCDTsDataHeaderType">
+    <xsd:sequence maxOccurs="1" minOccurs="1">
+      <xsd:element default="GeneracionDeCertificacionDeCDTs" minOccurs="1" name="nombreOperacion" type="xsd:string"/>
+      <xsd:element minOccurs="1" name="total" type="xsd:int"/>
+      <xsd:element minOccurs="1" name="jornada" type="xsd:short"/>
+      <xsd:element minOccurs="1" name="canal" type="xsd:short"/>
+      <xsd:element minOccurs="1" name="modoDeOperacion" type="xsd:short"/>
+      <xsd:element minOccurs="1" name="usuario" type="xsd:string"/>
+      <xsd:element minOccurs="1" name="perfil" type="xsd:short"/>
+      <xsd:element minOccurs="1" name="versionServicio" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="GeneracionDeCertificacionDeCDTsDataType">
+    <xsd:sequence maxOccurs="1" minOccurs="1">
+      <xsd:element name="serie" type="xsd:string"/>
+      <xsd:element name="numeroCertificado" type="xsd:int"/>
+      <xsd:element name="digitoDeChequeo" type="xsd:short"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="GeneracionDeCertificacionDeCDTsResponse" type="tns:GeneracionDeCertificacionDeCDTsResponseType"/>
+  <xsd:complexType name="GeneracionDeCertificacionDeCDTsResponseType">
+    <xsd:sequence maxOccurs="1" minOccurs="1">
+      <xsd:element name="Response" type="tns:ResponseType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ResponseType">
+    <xsd:sequence maxOccurs="1" minOccurs="1">
+      <xsd:element name="DataHeader" type="tns:DataHeaderRespType"/>
+      <xsd:element minOccurs="0" name="Data" type="tns:DataResponseType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="DataHeaderRespType">
+    <xsd:sequence maxOccurs="1" minOccurs="1">
+      <xsd:element name="nombreOperacion" type="xsd:string"/>
+      <xsd:element name="total" type="xsd:int"/>
+      <xsd:element name="caracterAceptacion" type="xsd:string"/>
+      <xsd:element name="ultimoMensaje" type="xsd:short"/>
+      <xsd:element name="codMsgRespuesta" type="xsd:short"/>
+      <xsd:element minOccurs="0" name="msgRespuesta" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="DataResponseType">
+    <xsd:all maxOccurs="1" minOccurs="1">
+      <xsd:element name="serie" type="xsd:string"/>
+      <xsd:element name="numeroCertificado" type="xsd:int"/>
+      <xsd:element name="digitoDeChequeo" type="xsd:short"/>
+      <xsd:element name="numIdPrimerTitular" type="xsd:long"/>
+      <xsd:element name="numIdSegundoTitular" type="xsd:long"/>
+      <xsd:element name="numIdTercerTitular" type="xsd:long"/>
+      <xsd:element name="estadoCDT" type="xsd:short"/>
+      <xsd:element name="manejo" type="xsd:short"/>
+      <xsd:element name="fechaDeExpedicion" type="xsd:string"/>
+      <xsd:element name="fechaDeVencimiento" type="xsd:string"/>
+      <xsd:element name="valorNominalInicial" type="xsd:string"/>
+      <xsd:element name="plazo" type="xsd:short"/>
+      <xsd:element name="tipoDePlazo" type="xsd:short"/>
+      <xsd:element name="periodicidadPagoIntereses" type="xsd:short"/>
+      <xsd:element name="modalidad" type="xsd:short"/>
+      <xsd:element name="tasaEA" type="xsd:string"/>
+      <xsd:element name="tasaNominal" type="xsd:string"/>
+      <xsd:element name="base" type="xsd:short"/>
+      <xsd:element name="fechaInicioPeriodo" type="xsd:string"/>
+      <xsd:element name="fechaProximoVencimiento" type="xsd:string"/>
+      <xsd:element name="tasaDelPeriodo" type="xsd:string"/>
+      <xsd:element name="tasaNominal1" type="xsd:string"/>
+      <xsd:element name="intereses" type="xsd:string"/>
+      <xsd:element name="rteFteCausada" type="xsd:string"/>
+      <xsd:element name="valorNetoActual" type="xsd:string"/>
+      <xsd:element name="observacion" type="xsd:string"/>
+      <xsd:element name="consecutivo" type="xsd:long"/>
+    </xsd:all>
+  </xsd:complexType>
+  <xsd:element name="GeneracionDeCertificacionDeCDTs" type="tns:GeneracionDeCertificacionDeCDTsType"/>
+</xsd:schema>

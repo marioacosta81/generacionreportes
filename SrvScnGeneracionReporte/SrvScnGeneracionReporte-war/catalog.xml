@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="file:/C:/Users/AndresFelipeVegaBelt/Downloads/SrvScnGeneracionReporte.wsdl" uri="src/conf/xml-resources/web-service-references/SrvScnGeneracionReporte/wsdl/SrvScnGeneracionReporte.wsdl"/>
+    <system systemId="file:/C:/Users/AndresFelipeVegaBelt/Downloads/SrvScnGeneracionReporte.xsd" uri="src/conf/xml-resources/web-service-references/SrvScnGeneracionReporte/wsdl/SrvScnGeneracionReporte.xsd"/>
+    <system systemId="file:/C:/Users/AndresFelipeVegaBelt/Downloads/ContextoRespuestaTipo.xsd" uri="src/conf/xml-resources/web-service-references/SrvScnGeneracionReporte/wsdl/ContextoRespuestaTipo.xsd"/>
+    <system systemId="file:/C:/MBaas/MBaaS_ServiciosComunes/Fuentes/credito-negocio-service/src/main/resources/wsdl/LibranzaVirtual/LibranzaVirtual.wsdl" uri="src/conf/xml-resources/web-service-references/LibranzaVirtual/wsdl/LibranzaVirtual.wsdl"/>
+    <system systemId="file:/C:/MBaas/MBaaS_ServiciosComunes/Fuentes/credito-negocio-service/src/main/resources/wsdl/LibranzaVirtual/LibranzaVirtual.xsd1.xsd" uri="src/conf/xml-resources/web-service-references/LibranzaVirtual/wsdl/LibranzaVirtual.xsd1.xsd"/>
+    <system systemId="file:/C:/MBaas/MBaaS_ServiciosComunes/Fuentes/credito-negocio-service/src/main/resources/wsdl/LibranzaVirtual/LibranzaVirtual.xsd2.xsd" uri="src/conf/xml-resources/web-service-references/LibranzaVirtual/wsdl/LibranzaVirtual.xsd2.xsd"/>
+</catalog>

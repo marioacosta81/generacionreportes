@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="http://www.davivienda.com/xml/ConsultaRentabilidades" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:con="http://www.davivienda.com/xml/ConsultaRentabilidades">
+
+	
+<xsd:complexType name="DataHeaderReqType">
+		
+<xsd:sequence maxOccurs="1" minOccurs="1">
+			
+<xsd:element default="ConsultaRentabilidades" name="nombreOperacion" type="xsd:string"/>
+			
+<xsd:element name="total" type="xsd:int"/>
+			
+<xsd:element name="jornada" type="xsd:short"/>
+			
+<xsd:element name="canal" type="xsd:short"/>
+			
+<xsd:element name="modoDeOperacion" type="xsd:short"/>
+			
+<xsd:element name="usuario" type="xsd:string"/>
+			
+<xsd:element name="perfil" type="xsd:short"/>
+			
+<xsd:element default="1.0.0" name="versionServicio" type="xsd:string"/>
+			
+<xsd:element name="idTransaccion" type="xsd:string"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	
+<xsd:complexType name="DataHeaderRespType">
+		
+<xsd:sequence maxOccurs="1" minOccurs="1">
+			
+<xsd:element name="nombreOperacion" type="xsd:string"/>
+			
+<xsd:element name="total" type="xsd:int"/>
+			
+<xsd:element name="caracterAceptacion" type="xsd:string"/>
+			
+<xsd:element name="ultimoMensaje" type="xsd:short"/>
+			
+<xsd:element name="idTransaccion" type="xsd:string"/>
+			
+<xsd:element name="codMsgRespuesta" type="xsd:short"/>
+			
+<xsd:element minOccurs="0" name="msgRespuesta" type="xsd:string"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	
+	
+<xsd:element name="ConsultaRentabilidades" type="con:ConsultaRentabilidadesType">
+	</xsd:element>
+	
+	
+<xsd:complexType name="ConsultaRentabilidadesType">
+		
+<xsd:sequence>
+			
+<xsd:element name="Request" type="con:RequestType"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	
+<xsd:element name="ConsultaRentabilidadesResponse" type="con:ConsultaRentabilidadesResponseType">
+	</xsd:element>
+
+	
+<xsd:complexType name="ConsultaRentabilidadesResponseType">
+		
+<xsd:sequence>
+			
+<xsd:element name="Response" type="con:ResponseType"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	
+<xsd:complexType name="RequestType">
+		
+<xsd:sequence>
+			
+<xsd:element name="DataHeader" type="con:DataHeaderReqType">
+			</xsd:element>
+			
+<xsd:element name="Data" type="con:DataReqType">
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	
+<xsd:complexType name="DataReqType">
+		
+<xsd:sequence>
+			
+<xsd:element name="valCodigoOficina" type="xsd:int" nillable="true"/>
+			
+<xsd:element name="valTalon" type="xsd:int" nillable="true"/>
+			
+<xsd:element name="fecConsulta" type="xsd:date" nillable="true"/>
+			
+<xsd:element name="valNitNegocio" type="xsd:long" nillable="true"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	
+<xsd:complexType name="ResponseType">
+		
+<xsd:sequence>
+			
+<xsd:element name="DataHeader" type="con:DataHeaderRespType"/>
+			
+<xsd:element name="Data" type="con:DataRespType" maxOccurs="1" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	
+	
+<xsd:complexType name="DataRespType">
+		
+<xsd:sequence>
+				
+<xsd:element name="valExisteRenta" type="xsd:string" nillable="true"/>
+				
+<xsd:element name="Fondos" type="con:FondoSRespType" maxOccurs="1" minOccurs="0"/>
+				
+<xsd:element name="EtiquetasRenta" type="con:EtiquetasRentaRespType" maxOccurs="1" minOccurs="0"/>	
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	
+<xsd:complexType name="FondoSRespType">
+		
+<xsd:sequence>
+				
+<xsd:element name="Fondo" type="con:ARRFondosRespType" maxOccurs="unbounded" minOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	
+<xsd:complexType name="ARRFondosRespType">
+		
+<xsd:sequence>
+				
+<xsd:element name="valCodigoFondo" type="xsd:string" nillable="true"/>
+				
+<xsd:element name="valNombreDelFondo" type="xsd:string" nillable="true"/>
+				
+<xsd:element name="fecInicio" type="xsd:date" nillable="true"/>
+				
+<xsd:element name="valFondo" type="xsd:decimal" nillable="true"/>
+				
+<xsd:element name="valUnidad" type="xsd:decimal" nillable="true"/>
+				
+<xsd:element name="valCambioUnidad" type="xsd:decimal" nillable="true"/>
+				
+<xsd:element name="RentabilidadesFondo" type="con:RentabilidadesRespType" maxOccurs="1" minOccurs="0"/>
+				
+<xsd:element name="Participaciones" type="con:ParticipacionesRespType" maxOccurs="1" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	
+<xsd:complexType name="RentabilidadesRespType">
+		
+<xsd:sequence>
+				
+<xsd:element name="Rentabilidades" type="con:ARRRentabilidadesType" maxOccurs="unbounded" minOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	
+<xsd:complexType name="ARRRentabilidadesType">
+		
+<xsd:sequence>
+			
+<xsd:element name="valNombreRentabilidad" type="xsd:string" nillable="true"/>
+			
+<xsd:element name="valRentabilidad" type="xsd:decimal" nillable="true"/>
+			
+<xsd:element name="codTipoRenta" type="xsd:string" nillable="true"/>		
+			
+<xsd:element name="valPresentacionRent" type="xsd:string" nillable="true"/>	
+			
+<xsd:element name="valEtiqueta" type="xsd:string" nillable="true"/>	
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	
+<xsd:complexType name="ParticipacionesRespType">
+		
+<xsd:sequence>
+				
+<xsd:element name="Participacion" type="con:ARRParticipacionesType" maxOccurs="unbounded" minOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	
+<xsd:complexType name="ARRParticipacionesType">
+		
+<xsd:sequence>
+			
+<xsd:element name="codParticipacion" type="xsd:string" nillable="true"/>
+			
+<xsd:element name="valNombreParticipacion" type="xsd:string" nillable="true"/>
+			
+<xsd:element name="fecInicio" type="xsd:date" nillable="true"/>
+			
+<xsd:element name="valParticipacion" type="xsd:decimal" nillable="true"/>
+			
+<xsd:element name="valUnidadParticipacion" type="xsd:decimal" nillable="true"/>		
+			
+<xsd:element name="valCambioUniParticipacion" type="xsd:decimal" nillable="true"/>	
+			
+<xsd:element name="RentaParticipaciones" type="con:RentaParticipacionRespType" maxOccurs="1" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	
+<xsd:complexType name="RentaParticipacionRespType">
+		
+<xsd:sequence>
+				
+<xsd:element name="RentaParticipacion" type="con:ARRRentabilidadesRespType" maxOccurs="unbounded" minOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	
+<xsd:complexType name="ARRRentabilidadesRespType">
+		
+<xsd:sequence>
+			
+<xsd:element name="valNombreRentabilidad" type="xsd:string" nillable="true"/>
+			
+<xsd:element name="valRentabilidad" type="xsd:decimal" nillable="true"/>
+			
+<xsd:element name="codTipoRenta" type="xsd:string" nillable="true"/>		
+			
+<xsd:element name="valPresentacionRent" type="xsd:string" nillable="true"/>	
+			
+<xsd:element name="valEtiqueta" type="xsd:string" nillable="true"/>	
+		</xsd:sequence>
+	</xsd:complexType>
+
+	
+	
+<xsd:complexType name="EtiquetasRentaRespType">
+		
+<xsd:sequence>
+				
+<xsd:element name="Etiquetas" type="con:EtiquetasType" maxOccurs="unbounded" minOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	
+<xsd:complexType name="EtiquetasType">
+		
+<xsd:sequence>
+			
+<xsd:element name="EtiquetaRenta" type="con:EtiquetaType" maxOccurs="unbounded" minOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+		
+	
+<xsd:complexType name="EtiquetaType">
+		
+<xsd:sequence>		
+			
+<xsd:element name="valEtiquetaRenta" type="xsd:string" nillable="true"/>
+			
+<xsd:element name="valNumeroEtiqueta" type="xsd:short" nillable="true"/>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

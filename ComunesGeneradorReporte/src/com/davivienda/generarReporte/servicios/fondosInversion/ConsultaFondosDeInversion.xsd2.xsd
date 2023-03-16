@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="http://www.davivienda.com/xml/ConsultaFondosDeInversion" xmlns:tns="http://www.davivienda.com/xml/ConsultaFondosDeInversion" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:complexType name="DataHeaderType">
+    <xsd:sequence>
+      <xsd:element default="ConsultaFondosDeInversion" name="nombreOperacion" type="xsd:string"/>
+      <xsd:element name="total" type="xsd:int"/>
+      <xsd:element name="jornada" type="xsd:short"/>
+      <xsd:element name="canal" type="xsd:short"/>
+      <xsd:element name="modoDeOperacion" type="xsd:short"/>
+      <xsd:element name="usuario" type="xsd:string"/>
+      <xsd:element name="perfil" type="xsd:short"/>
+      <xsd:element default="1.1.0" name="versionServicio" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="DataConsultaFondosDeInversion">
+    <xsd:sequence>
+      <xsd:element name="numeroProducto" type="xsd:long"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="RequestConsultaFondosDeInversion">
+    <xsd:sequence>
+      <xsd:element name="DataHeader" type="tns:DataHeaderType"/>
+      <xsd:element name="Data" type="tns:DataConsultaFondosDeInversion"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ConsultaFondosDeInversion">
+    <xsd:sequence>
+      <xsd:element name="Request" type="tns:RequestConsultaFondosDeInversion"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="ConsultaFondosDeInversion" type="tns:ConsultaFondosDeInversion"/>
+  <xsd:complexType name="DataHeaderRespType">
+    <xsd:sequence>
+      <xsd:element name="nombreOperacion" type="xsd:string"/>
+      <xsd:element name="total" type="xsd:int"/>
+      <xsd:element name="caracterAceptacion" type="xsd:string"/>
+      <xsd:element name="ultimoMensaje" type="xsd:short"/>
+      <xsd:element name="codMsgRespuesta" type="xsd:short"/>
+      <xsd:element minOccurs="0" name="msgRespuesta" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ConsultaFondosDeInversionDataResp">
+    <xsd:sequence>
+      <xsd:element name="cuentaDebito" type="xsd:string"/>
+      <xsd:element name="fechaPrimerAporte" type="xsd:dateTime"/>
+      <xsd:element name="fechaPrimerApertura" type="xsd:dateTime"/>
+      <xsd:element name="saldoTotal" type="xsd:decimal"/>
+      <xsd:element name="saldoRetOficina" type="xsd:decimal"/>
+      <xsd:element name="valorPignorado" type="xsd:decimal"/>
+      <xsd:element name="valorCanje" type="xsd:decimal"/>
+      <xsd:element name="valorContingente" type="xsd:decimal"/>
+      <xsd:element name="cuentaRetiros" type="xsd:string"/>
+      <xsd:element name="entidadRetiros" type="xsd:short"/>
+      <xsd:element name="valorProgramar" type="xsd:decimal"/>
+      <xsd:element name="saldoCancelacion" type="xsd:decimal"/>
+      <xsd:element name="fechaVencimiento" type="xsd:dateTime"/>
+      <xsd:element name="saldoDispRetAfc" type="xsd:decimal"/>
+      <xsd:element name="valorCancTransfer" type="xsd:decimal"/>
+      <xsd:element name="tipoPlan" type="xsd:short"/>
+      <xsd:element name="objetivo" type="xsd:short"/>
+      <xsd:element name="valorApertura" type="xsd:decimal"/>
+      <xsd:element name="valorAportePeriodico" type="xsd:decimal"/>
+      <xsd:element name="periodicidad" type="xsd:short"/>
+      <xsd:element name="fechaAportePeriodico" type="xsd:dateTime"/>
+      <xsd:element name="rentabilidadMes" type="xsd:decimal"/>
+      <xsd:element name="rentabilidadAno" type="xsd:decimal"/>
+      <xsd:element name="rentabilidad3anos" type="xsd:decimal"/>
+      <xsd:element name="tipoIdentificacion" type="xsd:short"/>
+      <xsd:element name="numeroIdentificacion" type="xsd:string"/>
+      <xsd:element name="codigoSubproducto" type="xsd:short"/>
+      <xsd:element name="nombrePlan" type="xsd:string"/>
+      <xsd:element name="nitEmpleador" type="xsd:string"/>
+      <xsd:element name="fechaPago" type="xsd:dateTime"/>
+      <xsd:element name="saldoSinAfectar" type="xsd:decimal"/>
+      <xsd:element name="saldoConsolidado" type="xsd:decimal"/>
+      <xsd:element name="saldoNoConsolidado" type="xsd:decimal"/>
+      <xsd:element name="saldoInmovilizado" type="xsd:decimal"/>
+      <xsd:element name="saldoAportesPdteApl" type="xsd:decimal"/>
+      <xsd:element name="saldoProgPdteApl" type="xsd:decimal"/>
+      <xsd:element name="saldoRetirosPdtePag" type="xsd:decimal"/>
+      <xsd:element name="saldoRetirosProg" type="xsd:decimal"/>
+      <xsd:element name="indicadorMensaje" type="xsd:string"/>
+      <xsd:element name="senalCommit" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ResponseConsultaFondosDeInversion">
+    <xsd:sequence>
+      <xsd:element name="DataHeader" type="tns:DataHeaderRespType"/>
+      <xsd:element minOccurs="0" name="Data" type="tns:ConsultaFondosDeInversionDataResp"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ConsultaFondosDeInversionResponse">
+    <xsd:sequence>
+      <xsd:element name="Response" type="tns:ResponseConsultaFondosDeInversion"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="ConsultaFondosDeInversionResponse" type="tns:ConsultaFondosDeInversionResponse"/>
+</xsd:schema>

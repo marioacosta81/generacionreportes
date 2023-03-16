@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2.6hudson-86  svn-revision#12773.--><xsd:schema targetNamespace="http://www.davivienda.com/Esquemas/Framework/PaginacionTipo/v1" elementFormDefault="qualified" xmlns:ns0="http://www.davivienda.com/Esquemas/Framework/PaginacionTipo/v1" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:complexType name="PaginacionTipo">
+    <xsd:sequence>
+      <xsd:element name="valCantidadRegistrosLote" type="xsd:int" minOccurs="0"/>
+      <xsd:element name="valNumeroLote" type="xsd:int" minOccurs="0"/>
+      <xsd:element name="valTotalRegistros" type="xsd:int" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

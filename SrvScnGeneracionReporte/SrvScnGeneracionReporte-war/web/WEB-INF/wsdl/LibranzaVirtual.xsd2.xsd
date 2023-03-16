@@ -1,0 +1,136 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:s1="http://microsoft.com/wsdl/types/">
+   <xsd:complexType name="LibranzaVirtualType">
+      <xsd:sequence>
+         <xsd:element name="Request" type="LibranzaVirtualRequestType"/>
+      </xsd:sequence>
+   </xsd:complexType>
+
+
+
+   <xsd:complexType name="LibranzaVirtualRespType">
+      <xsd:sequence>
+         <xsd:element name="DataHeader" type="DataHeaderRespType"/>
+         <xsd:element minOccurs="0" name="Data" type="LibranzaVirtualRespDataType"/>
+      </xsd:sequence>
+   </xsd:complexType>
+
+   
+
+   <xsd:complexType name="LibranzaVirtualRequestType">
+      <xsd:sequence maxOccurs="1" minOccurs="1">
+         <xsd:element name="DataHeader" type="DataHeaderType"/>
+         <xsd:element name="Data" type="LibranzaVirtualDataType"/>
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType name="DataHeaderType">
+      <xsd:sequence maxOccurs="1" minOccurs="1">
+         <xsd:element default="LibranzaVirtual" name="nombreOperacion" type="xsd:string"/>
+         <xsd:element name="total" type="xsd:int"/>
+         <xsd:element name="jornada" type="xsd:short"/>
+         <xsd:element name="canal" type="xsd:short"/>
+         <xsd:element name="modoDeOperacion" type="xsd:short"/>
+         <xsd:element name="usuario" type="xsd:string"/>
+         <xsd:element name="perfil" type="xsd:short"/>
+         <xsd:element default="1.0.0" name="versionServicio" type="xsd:string"/>
+         <xsd:element name="idTransaccion" type="xsd:string"/>
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType name="LibranzaVirtualDataType">
+      <xsd:sequence maxOccurs="1" minOccurs="1">
+         <xsd:element minOccurs="1" name="idAplicacionOrigen" type="xsd:decimal"/>
+         <xsd:element minOccurs="1" name="codTransaccion" type="xsd:decimal"/>
+         <xsd:element minOccurs="0" name="numeroSolicitudSIEBEL" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="numeroProductoSIEBEL" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="codigoAgenteVenta" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="tipoIdEmpresa" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="numeroIdEmpresa" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="nitEmpresaAgenteVenta" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="tipoIdentificacionCliente" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="numeroIdentificacionCliente" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="nombresCliente" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="primerApellido" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="segundoApellido" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="fechaNacimiento" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="telefonoMovil" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="telefonoFijo" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="direccionCorrespondencia" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="ciudadCorrespondencia" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="correoElectronico" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="tipoContrato" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="antiguedad" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="salarioMensual" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="codigoConvenioFM" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="plazo" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="valorSolicitado" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="valorCuota" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="lineaCreditoSiebel" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="destinoCreditoSiebel" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="tipoCreditoSiebel" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="tipoGarantiaSiebel" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="vendedor" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="estadoGarantiaHipotecario" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="actividadLaboral" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="edad" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="moneda" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="rangoColocacionSiebel" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="cobertura" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="productoSiebelHipotecario" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="opcionDeCompra" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="usoGarantiaSiebel" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="programaDeGobierno" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="canalVentaSiebel" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="segmentoClienteSiebel" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="oficinaRadicacionl" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="numeroRegistros" type="xsd:int"/>
+         <xsd:element maxOccurs="1" minOccurs="0" name="informacionCarteras" type="DataRespInformacionCarteras"/>
+         <xsd:element minOccurs="1" name="valIPOrigen" type="xsd:string"/>
+         <xsd:element minOccurs="1" name="valUsuario" type="xsd:string"/>
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType name="DataHeaderRespType">
+      <xsd:sequence maxOccurs="1" minOccurs="1">
+         <xsd:element default="LibranzaVirtual" name="nombreOperacion" type="xsd:string"/>
+         <xsd:element name="total" type="xsd:int"/>
+         <xsd:element name="caracterAceptacion" type="xsd:string"/>
+         <xsd:element name="ultimoMensaje" type="xsd:short"/>
+         <xsd:element name="idTransaccion" type="xsd:string"/>
+         <xsd:element name="codMsgRespuesta" type="xsd:short"/>
+         <xsd:element minOccurs="0" name="msgRespuesta" type="xsd:string"/>
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType name="DataRespInformacionCarteras">
+      <xsd:sequence maxOccurs="1" minOccurs="0">
+         <xsd:element maxOccurs="10" minOccurs="0" name="informacionCartera" type="DataRespInformacionCartera"/>
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType name="DataRespInformacionCartera">
+      <xsd:sequence maxOccurs="1" minOccurs="0">
+         <xsd:element minOccurs="0" name="entidadcompracartera" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="productocompracartera" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="valorcompracartera" type="xsd:string"/>
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType name="LibranzaVirtualRespDataType">
+      <xsd:sequence maxOccurs="1" minOccurs="1">
+         <xsd:element minOccurs="1" name="codRespuesta" type="xsd:string"/>
+         <xsd:element minOccurs="1" name="codTransaccion" type="xsd:decimal"/>
+         <xsd:element minOccurs="1" name="descDatosSalida" type="xsd:string"/>
+         <xsd:element minOccurs="1" name="descRespuesta" type="xsd:string"/>
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType name="LibranzaVirtualResponseType">
+      <xsd:sequence maxOccurs="1" minOccurs="1">
+         <xsd:element name="Response" type="LibranzaVirtualRespType"/>
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:simpleType name="char">
+      <xsd:restriction base="xsd:string">
+         <xsd:length value="1"/>
+      </xsd:restriction>
+   </xsd:simpleType>
+
+
+      <xsd:element name="LibranzaVirtual" type="LibranzaVirtualType"/>
+<xsd:element name="LibranzaVirtualResponse" type="LibranzaVirtualResponseType"/>
+
+</xsd:schema>

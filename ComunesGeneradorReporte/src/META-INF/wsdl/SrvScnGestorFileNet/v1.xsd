@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2.6b02  svn-revision#14033.--><xsd:schema targetNamespace="http://www.davivienda.com/FileNet/SrvScnGestorFileNet/v1" elementFormDefault="qualified" xmlns:ns2="http://www.davivienda.com/Esquemas/FileNet/DocumentoTipo/v1" xmlns:ns1="http://www.davivienda.com/Esquemas/Framework/ContextoSolicitudTipo/v1" xmlns:ns3="http://www.davivienda.com/Esquemas/Framework/ContextoRespuestaTipo/v1" xmlns:ns0="http://www.davivienda.com/FileNet/SrvScnGestorFileNet/v1" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:import schemaLocation="v1_1.xsd" namespace="http://www.davivienda.com/Esquemas/Framework/ContextoSolicitudTipo/v1"/>
+  <xsd:import schemaLocation="v1_1_2_3_4_5_6_7_8_9_10_11.xsd" namespace="http://www.davivienda.com/Esquemas/FileNet/DocumentoTipo/v1"/>
+  <xsd:import schemaLocation="v1_1_2_3_4_5_6_7_8_9_10_11_12_13_14.xsd" namespace="http://www.davivienda.com/Esquemas/Framework/ContextoRespuestaTipo/v1"/>
+  <xsd:complexType name="MsjRespOpCargarDocumento">
+    <xsd:sequence>
+      <xsd:element name="contextoRespuesta" type="ns3:ContextoRespuestaTipo"/>
+      <xsd:element name="valIdDocumento" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="MsjSolOpCargarDocumento">
+    <xsd:sequence>
+      <xsd:element name="contextoSolicitud" type="ns1:ContextoSolicitudTipo"/>
+      <xsd:element name="documento" type="ns2:DocumentoTipo"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="msjSolOpCargarDocumento" type="ns0:MsjSolOpCargarDocumento"/>
+  <xsd:element name="msjRespOpCargarDocumento" type="ns0:MsjRespOpCargarDocumento"/>
+</xsd:schema>

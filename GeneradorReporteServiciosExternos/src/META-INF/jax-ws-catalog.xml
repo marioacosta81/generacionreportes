@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="file:/C:/Users/IBM_ADMIN/Documents/projects/ServicioGeneracionReportes/VersionSuperMejorada/cuentas_maestras/ConsultaSaldosProductosService.wsdl" uri="xml-resources/web-service-references/ConsultaSaldosProductosService/wsdl/ConsultaSaldosProductosService.wsdl"/>
+    <system systemId="file:/C:/Users/IBM_ADMIN/Documents/projects/ServicioGeneracionReportes/VersionSuperMejorada/cuentas_maestras/ConsultaSaldosProductos.xsd" uri="xml-resources/web-service-references/ConsultaSaldosProductosService/wsdl/ConsultaSaldosProductos.xsd"/>
+    <system systemId="file:/C:/Users/IBM_ADMIN/Documents/projects/ServicioGeneracionReportes/VersionSuperMejorada/cuentas_maestras/ConsultasProductos_1.wsdl" uri="xml-resources/web-service-references/ConsultasProductos_1/wsdl/ConsultasProductos_1.wsdl"/>
+    <system systemId="file:/C:/Users/IBM_ADMIN/Documents/projects/ServicioGeneracionReportes/VersionSuperMejorada/cuentas_maestras/ConsultasProductos.xsd2.xsd" uri="xml-resources/web-service-references/ConsultasProductos_1/wsdl/ConsultasProductos.xsd2.xsd"/>
+    <system systemId="http://90.3.1.61:80/ESBService/ConsultaRentabilidades?wsdl" uri="wsdl/90.3.1.61_80/ESBService/ConsultaRentabilidades.wsdl"/>
+    <system systemId="http://90.3.1.61:80/ESBService/ConsultaRentabilidades.xsd2.xsd" uri="wsdl/90.3.1.61_80/ESBService/ConsultaRentabilidades.xsd2.xsd"/>
+</catalog>

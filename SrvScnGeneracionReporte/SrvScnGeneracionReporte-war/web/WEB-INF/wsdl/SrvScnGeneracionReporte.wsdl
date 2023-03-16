@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions targetNamespace="http://www.davivienda.com/GenerarReporte/SrvScnGeneracionReporte/v1"
+	name="v1" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns="http://www.davivienda.com/GenerarReporte/SrvScnGeneracionReporte/v1"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata"
+	xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsp="http://www.w3.org/ns/ws-policy"
+	xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+	<types>
+		<xsd:schema>
+			<xsd:import
+				namespace="http://www.davivienda.com/GenerarReporte/SrvScnGeneracionReporte/v1"
+				schemaLocation="SrvScnGeneracionReporte.xsd" />
+		</xsd:schema>
+	</types>
+	<!-- GeneracionCertificado -->
+	<message name="OpGeneracionReporte">
+		<part name="msjSolOpGeneracionReporte" element="tns:msjSolOpGeneracionReporte" />
+	</message>
+	<message name="OpGeneracionReporteResponse">
+		<part name="msjRespOpGeneracionReporte" element="tns:msjRespOpGeneracionReporte" />
+	</message>
+	<portType name="portSrvScnGeneracionReporteSOAP">
+		<!-- ConsultarPagare -->
+		<operation name="OpGeneracionReporte">
+			<input
+				wsam:Action="http://www.davivienda.com/GenerarReporte/SrvScnConsultarPagare/v1/OpGeneracionReporte"
+				message="tns:OpGeneracionReporte" />
+			<output
+				wsam:Action="http://www.davivienda.com/GenerarReporte/SrvScnConsultarPagare/v1/portSrvScnGeneracionReporteSOAP/OpGeneracionReporteResponse"
+				message="tns:OpGeneracionReporteResponse" />
+		</operation>
+	</portType>
+	<binding name="portSrvScnGeneracionReporteSOAPBinding" type="tns:portSrvScnGeneracionReporteSOAP">
+		<soap:binding transport="http://schemas.xmlsoap.org/soap/http"
+			style="document" />
+		<operation name="OpGeneracionReporte">
+			<soap:operation
+				soapAction="http://www.davivienda.com/GenerarReporte/SrvScnConsultarPagare/v1/OpGeneracionReporte" />
+			<input>
+				<soap:body use="literal" />
+			</input>
+			<output>
+				<soap:body use="literal" />
+			</output>
+		</operation>
+	</binding>
+	<service name="srvScnGeneracionReporte">
+		<port name="portSrvScnGeneracionReporteSOAP" binding="tns:portSrvScnGeneracionReporteSOAPBinding">
+			<soap:address
+				location="http://datapower.davivienda.loc/GenerarReporte/SrvScnGenercionReporte/V2" />
+		</port>
+	</service>
+</definitions>
