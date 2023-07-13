@@ -43,6 +43,8 @@ public class FuncionesTransformacion {
         funciones.put("formatearFechaV2", 15);
         funciones.put("formatearNumeroV2", 16);
         funciones.put("formatear4Digitos", 17);
+        funciones.put("validarValorRequerido", 18);
+        
     }
 
     private int obtenerPos(String funcion) {
@@ -146,7 +148,11 @@ public class FuncionesTransformacion {
 
                 return formatearNumerov2(entrada, 0, 2, "", true, true);
             case 17: //&formatear4Digitos
-                return this.formatear4Digitos(entrada);    
+                return this.formatear4Digitos(entrada);
+            
+            case 18: 
+                this.validarValorRequerido(entrada);
+                break;
             default:
         }
         return entrada;
@@ -565,5 +571,11 @@ public class FuncionesTransformacion {
 
         }
         return cadena;
+    }
+    
+    private void validarValorRequerido(String entrada) throws GenerarReporteException {
+        if(null == entrada || entrada.isEmpty()  ){
+            throw new GenerarReporteException("724", "El valor de entrada es requerido");
+        }
     }
 }

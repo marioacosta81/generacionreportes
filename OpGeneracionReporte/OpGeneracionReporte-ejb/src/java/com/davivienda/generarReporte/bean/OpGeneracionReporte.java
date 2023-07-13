@@ -248,7 +248,7 @@ public class OpGeneracionReporte extends EJBCycleCache implements OpGenerarRepor
             response.setContextoRespuesta(GenerarReporteComunesUtil.getContextoRespuestaMal(this.configuracionServicio, this.contextoSolicitud, "43", new Object[]{e
                 .getMessage()}));
         }
-
+        /*
         //viene por maestro
         if (request.getIdProcesoDocumento() != null && !request.getIdProcesoDocumento().isEmpty()) {
             directo = false;
@@ -308,7 +308,7 @@ public class OpGeneracionReporte extends EJBCycleCache implements OpGenerarRepor
             } catch (Exception ex) {
                 this.logger.error("Error al tratar de actualizar(actualizarFallo()) el registro de errores en la bd", ex);
             }
-        }
+        }*/
         return response;
     }
 

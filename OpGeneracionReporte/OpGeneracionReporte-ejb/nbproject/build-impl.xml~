@@ -781,6 +781,9 @@ exists or setup the property manually. For example like this:
                 COMPILATION SECTION
             -->
     <target depends="init" if="no.dist.ear.dir" name="-deps-module-jar" unless="no.deps">
+        <ant antfile="${project.ComunesGeneracionDocumentos}/build.xml" inheritall="false" target="jar">
+            <property name="deploy.on.save" value="false"/>
+        </ant>
         <ant antfile="${project.ComunesGeneradorReporte}/build.xml" inheritall="false" target="jar">
             <property name="deploy.on.save" value="false"/>
         </ant>
@@ -789,6 +792,9 @@ exists or setup the property manually. For example like this:
         </ant>
     </target>
     <target depends="init" if="dist.ear.dir" name="-deps-ear-jar" unless="no.deps">
+        <ant antfile="${project.ComunesGeneracionDocumentos}/build.xml" inheritall="false" target="jar">
+            <property name="deploy.on.save" value="false"/>
+        </ant>
         <ant antfile="${project.ComunesGeneradorReporte}/build.xml" inheritall="false" target="jar">
             <property name="deploy.on.save" value="false"/>
         </ant>
@@ -807,7 +813,6 @@ exists or setup the property manually. For example like this:
     </target>
     <target depends="compile,-library-inclusion-in-archive-weblogic,-library-inclusion-in-archive-by-user" name="library-inclusion-in-archive"/>
     <target if="is.jars.in.ejbjar" name="-library-inclusion-in-archive-by-user">
-        <copyfiles files="${file.reference.ComunesGeneracionDocumentos.jar}" todir="${build.classes.dir}"/>
         <copyfiles files="${file.reference.avalon-framework-api-4.3.1.jar}" todir="${build.classes.dir}"/>
         <copyfiles files="${file.reference.avalon-framework-impl-4.3.1.jar}" todir="${build.classes.dir}"/>
         <copyfiles files="${file.reference.batik-all-1.8.jar}" todir="${build.classes.dir}"/>
@@ -824,12 +829,8 @@ exists or setup the property manually. For example like this:
         <copyfiles files="${file.reference.xml-apis-1.3.04.jar}" todir="${build.classes.dir}"/>
         <copyfiles files="${file.reference.xml-apis-ext-1.3.04.jar}" todir="${build.classes.dir}"/>
         <copyfiles files="${file.reference.xmlgraphics-commons-2.1.jar}" todir="${build.classes.dir}"/>
-        <copyfiles files="${file.reference.CacheServiciosSCN-2.0.jar}" todir="${build.classes.dir}"/>
-        <copyfiles files="${file.reference.ComunesSCN-3.0.jar}" todir="${build.classes.dir}"/>
-        <copyfiles files="${file.reference.FrameworkTACApp-3.0.jar}" todir="${build.classes.dir}"/>
     </target>
     <target if="is.server.weblogic" name="-library-inclusion-in-archive-weblogic">
-        <basename file="${file.reference.ComunesGeneracionDocumentos.jar}" property="manifest.file.reference.ComunesGeneracionDocumentos.jar"/>
         <basename file="${file.reference.avalon-framework-api-4.3.1.jar}" property="manifest.file.reference.avalon-framework-api-4.3.1.jar"/>
         <basename file="${file.reference.avalon-framework-impl-4.3.1.jar}" property="manifest.file.reference.avalon-framework-impl-4.3.1.jar"/>
         <basename file="${file.reference.batik-all-1.8.jar}" property="manifest.file.reference.batik-all-1.8.jar"/>
@@ -846,35 +847,27 @@ exists or setup the property manually. For example like this:
         <basename file="${file.reference.xml-apis-1.3.04.jar}" property="manifest.file.reference.xml-apis-1.3.04.jar"/>
         <basename file="${file.reference.xml-apis-ext-1.3.04.jar}" property="manifest.file.reference.xml-apis-ext-1.3.04.jar"/>
         <basename file="${file.reference.xmlgraphics-commons-2.1.jar}" property="manifest.file.reference.xmlgraphics-commons-2.1.jar"/>
-        <basename file="${file.reference.CacheServiciosSCN-2.0.jar}" property="manifest.file.reference.CacheServiciosSCN-2.0.jar"/>
-        <basename file="${file.reference.ComunesSCN-3.0.jar}" property="manifest.file.reference.ComunesSCN-3.0.jar"/>
-        <basename file="${file.reference.FrameworkTACApp-3.0.jar}" property="manifest.file.reference.FrameworkTACApp-3.0.jar"/>
         <manifest file="${build.ear.classes.dir}/META-INF/MANIFEST.MF" mode="update">
-            <attribute name="Extension-List" value="jar-1 jar-2 jar-3 jar-4 jar-5 jar-6 jar-7 jar-8 jar-9 jar-10 jar-11 jar-12 jar-13 jar-14 jar-15 jar-16 jar-17 jar-18 jar-19 jar-20 "/>
-            <attribute name="jar-1-Extension-Name" value="${manifest.file.reference.ComunesGeneracionDocumentos.jar}"/>
-            <attribute name="jar-2-Extension-Name" value="${manifest.file.reference.avalon-framework-api-4.3.1.jar}"/>
-            <attribute name="jar-3-Extension-Name" value="${manifest.file.reference.avalon-framework-impl-4.3.1.jar}"/>
-            <attribute name="jar-4-Extension-Name" value="${manifest.file.reference.batik-all-1.8.jar}"/>
-            <attribute name="jar-5-Extension-Name" value="${manifest.file.reference.commons-io-1.3.1.jar}"/>
-            <attribute name="jar-6-Extension-Name" value="${manifest.file.reference.commons-lang3-3.5.jar}"/>
-            <attribute name="jar-7-Extension-Name" value="${manifest.file.reference.commons-logging-1.0.4.jar}"/>
-            <attribute name="jar-8-Extension-Name" value="${manifest.file.reference.fontbox-1.8.5.jar}"/>
-            <attribute name="jar-9-Extension-Name" value="${manifest.file.reference.fop.jar}"/>
-            <attribute name="jar-10-Extension-Name" value="${manifest.file.reference.javaee-api-8.0.jar}"/>
-            <attribute name="jar-11-Extension-Name" value="${manifest.file.reference.jaxws-rt-2.1.4.jar}"/>
-            <attribute name="jar-12-Extension-Name" value="${manifest.file.reference.serializer-2.7.0.jar}"/>
-            <attribute name="jar-13-Extension-Name" value="${manifest.file.reference.xalan-2.7.2.jar}"/>
-            <attribute name="jar-14-Extension-Name" value="${manifest.file.reference.xercesImpl-2.9.1.jar}"/>
-            <attribute name="jar-15-Extension-Name" value="${manifest.file.reference.xml-apis-1.3.04.jar}"/>
-            <attribute name="jar-16-Extension-Name" value="${manifest.file.reference.xml-apis-ext-1.3.04.jar}"/>
-            <attribute name="jar-17-Extension-Name" value="${manifest.file.reference.xmlgraphics-commons-2.1.jar}"/>
-            <attribute name="jar-18-Extension-Name" value="${manifest.file.reference.CacheServiciosSCN-2.0.jar}"/>
-            <attribute name="jar-19-Extension-Name" value="${manifest.file.reference.ComunesSCN-3.0.jar}"/>
-            <attribute name="jar-20-Extension-Name" value="${manifest.file.reference.FrameworkTACApp-3.0.jar}"/>
+            <attribute name="Extension-List" value="jar-1 jar-2 jar-3 jar-4 jar-5 jar-6 jar-7 jar-8 jar-9 jar-10 jar-11 jar-12 jar-13 jar-14 jar-15 jar-16 "/>
+            <attribute name="jar-1-Extension-Name" value="${manifest.file.reference.avalon-framework-api-4.3.1.jar}"/>
+            <attribute name="jar-2-Extension-Name" value="${manifest.file.reference.avalon-framework-impl-4.3.1.jar}"/>
+            <attribute name="jar-3-Extension-Name" value="${manifest.file.reference.batik-all-1.8.jar}"/>
+            <attribute name="jar-4-Extension-Name" value="${manifest.file.reference.commons-io-1.3.1.jar}"/>
+            <attribute name="jar-5-Extension-Name" value="${manifest.file.reference.commons-lang3-3.5.jar}"/>
+            <attribute name="jar-6-Extension-Name" value="${manifest.file.reference.commons-logging-1.0.4.jar}"/>
+            <attribute name="jar-7-Extension-Name" value="${manifest.file.reference.fontbox-1.8.5.jar}"/>
+            <attribute name="jar-8-Extension-Name" value="${manifest.file.reference.fop.jar}"/>
+            <attribute name="jar-9-Extension-Name" value="${manifest.file.reference.javaee-api-8.0.jar}"/>
+            <attribute name="jar-10-Extension-Name" value="${manifest.file.reference.jaxws-rt-2.1.4.jar}"/>
+            <attribute name="jar-11-Extension-Name" value="${manifest.file.reference.serializer-2.7.0.jar}"/>
+            <attribute name="jar-12-Extension-Name" value="${manifest.file.reference.xalan-2.7.2.jar}"/>
+            <attribute name="jar-13-Extension-Name" value="${manifest.file.reference.xercesImpl-2.9.1.jar}"/>
+            <attribute name="jar-14-Extension-Name" value="${manifest.file.reference.xml-apis-1.3.04.jar}"/>
+            <attribute name="jar-15-Extension-Name" value="${manifest.file.reference.xml-apis-ext-1.3.04.jar}"/>
+            <attribute name="jar-16-Extension-Name" value="${manifest.file.reference.xmlgraphics-commons-2.1.jar}"/>
         </manifest>
     </target>
     <target depends="compile" name="library-inclusion-in-manifest">
-        <copyfiles files="${file.reference.ComunesGeneracionDocumentos.jar}" todir="${dist.ear.dir}/lib"/>
         <copyfiles files="${file.reference.avalon-framework-api-4.3.1.jar}" todir="${dist.ear.dir}/lib"/>
         <copyfiles files="${file.reference.avalon-framework-impl-4.3.1.jar}" todir="${dist.ear.dir}/lib"/>
         <copyfiles files="${file.reference.batik-all-1.8.jar}" todir="${dist.ear.dir}/lib"/>
@@ -891,9 +884,6 @@ exists or setup the property manually. For example like this:
         <copyfiles files="${file.reference.xml-apis-1.3.04.jar}" todir="${dist.ear.dir}/lib"/>
         <copyfiles files="${file.reference.xml-apis-ext-1.3.04.jar}" todir="${dist.ear.dir}/lib"/>
         <copyfiles files="${file.reference.xmlgraphics-commons-2.1.jar}" todir="${dist.ear.dir}/lib"/>
-        <copyfiles files="${file.reference.CacheServiciosSCN-2.0.jar}" todir="${dist.ear.dir}/lib"/>
-        <copyfiles files="${file.reference.ComunesSCN-3.0.jar}" todir="${dist.ear.dir}/lib"/>
-        <copyfiles files="${file.reference.FrameworkTACApp-3.0.jar}" todir="${dist.ear.dir}/lib"/>
         <manifest file="${build.ear.classes.dir}/META-INF/MANIFEST.MF" mode="update"/>
     </target>
     <target name="-copy-meta-inf">
@@ -1277,6 +1267,7 @@ exists or setup the property manually. For example like this:
                 CLEANUP SECTION
             -->
     <target depends="init" name="deps-clean" unless="no.deps">
+        <ant antfile="${project.ComunesGeneracionDocumentos}/build.xml" inheritall="false" target="clean"/>
         <ant antfile="${project.ComunesGeneradorReporte}/build.xml" inheritall="false" target="clean"/>
         <ant antfile="${project.GeneradorReporteServiciosExternos}/build.xml" inheritall="false" target="clean"/>
     </target>
